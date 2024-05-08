@@ -1,125 +1,140 @@
-m_Name: "LightBack"
-m_Rect:
-  serializedVersion: 2
-  x: 0
-  y: 0
-  width: 236
-  height: 250
-m_Offset: {x: 0, y: 0}
-m_Border: {x: 0, y: 0, z: 0, w: 0}
-m_PixelsToUnits: 100
-m_Pivot: {x: 0.5, y: 0.5}
-m_Extrude: 1
-m_IsPolygon: 0
-m_RenderDataKey:87f3e901243134e44ae2a12462749f73: 21300000
-m_AtlasTags:
-- "GamePlay"
-m_SpriteAtlas: {fileID: 68707889500000, guid: 9e81f0dc0e6ddc74a8350f4d4b5687b5, type: 2}
-m_RD:
-  serializedVersion: 3
-  texture: {fileID: 0}
-  alphaTexture: {fileID: 0}
-  secondaryTextures: []
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 54
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 20
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_IndexBuffer: 1300120011001000110012000F00110010000E000F0010000D000F000E000C000D000E000B000D000C000A000B000C0009000B000A00070009000A00080009000700060008000700040006000700050006000400030005000400000003000400010003000000020001000000
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 20
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 1
-      offset: 0
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 1
-      offset: 8
-      format: 0
-      dimension: 4
-    - stream: 1
-      offset: 24
-      format: 10
-      dimension: 4
-    m_DataSize: D7A3903F9A99593F000000003D0A973F0AD723BF000000003D0A973F52B81E3F00000000D7A3903F85EB51BF00000000B81E853F5C8F823F000000000AD7833F000080BF000000000AD7633F85EB91BF00000000A4703D3F0000A03F00000000A4703D3FA4709DBF00000000C3F5283F0000A0BF000000001F852BBF0000A03F00000000333333BF0000A0BF00000000A4703DBF52B89E3F00000000666666BF85EB91BF00000000A4707DBFC3F5883F00000000B81E85BFAE4781BF00000000D7A390BF9A99593F00000000E17A94BF48E13ABF000000003D0A97BF0AD7233F000000003D0A97BFC3F528BF0000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
-  m_Bindpose: []
-  textureRect:
+fileFormatVersion: 2
+guid: 9e81f0dc0e6ddc74a8350f4d4b5687b5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 236
-    height: 250
-  textureRectOffset: {x: 0, y: 0}
-  atlasRectOffset: {x: -1, y: -1}
-  settingsRaw: 64
-  uvTransform: {x: 100, y: 118, z: 100, w: 125}
-  downscaleMultiplier: 1
-m_PhysicsShape:
-- - {x: 0.57, y: 0.42}
-  - {x: 0.54, y: 0.54}
-  - {x: 0.36, y: 0.68}
-  - {x: -0.31, y: 0.68}
-  - {x: -0.42, y: 0.64}
-  - {x: -0.49, y: 0.57}
-  - {x: -0.56, y: 0.46}
-  - {x: -0.57, y: 0.39}
-  - {x: -0.57, y: -0.35}
-  - {x: -0.55, y: -0.45}
-  - {x: -0.51, y: -0.58}
-  - {x: -0.35, y: -0.68}
-  - {x: 0.35, y: -0.68}
-  - {x: 0.51, y: -0.58}
-  - {x: 0.56, y: -0.46}
-  - {x: 0.57, y: -0.4}
-m_Bones: []
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 2
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

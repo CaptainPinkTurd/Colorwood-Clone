@@ -1,133 +1,140 @@
-m_Name: "mouth-H"
-m_Rect:
-  serializedVersion: 2
-  x: 570.5
-  y: 1159.5
-  width: 363
-  height: 214
-m_Offset: {x: 0, y: 0}
-m_Border: {x: 0, y: 0, z: 0, w: 0}
-m_PixelsToUnits: 4
-m_Pivot: {x: 0.5, y: 0.5}
-m_Extrude: 1
-m_IsPolygon: 0
-m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: 7526583037811230627
-m_AtlasTags: []
-m_SpriteAtlas: {fileID: 0}
-m_RD:
-  serializedVersion: 3
-  texture: {fileID: 2800000, guid: 6ca6960cf05bc2946b157f6afaf274d5, type: 3}
-  alphaTexture: {fileID: 0}
-  secondaryTextures: []
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_IndexBuffer: 000002000100000003000200
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 1
-      offset: 0
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 1
-      offset: 8
-      format: 0
-      dimension: 4
-    - stream: 1
-      offset: 24
-      format: 10
-      dimension: 4
-    m_DataSize: 008035420000D6C1000000000000803F0000000000000000000080BF008035420000D641000000000000803F0000000000000000000080BF008035C20000D641000000000000803F0000000000000000000080BF008035C20000D6C1000000000000803F0000000000000000000080BF0060693F00F0103F0000803F000000000000000000000000000000000000000000000000000000000060693F00B02B3F0000803F0000000000000000000000000000000000000000000000000000000000A00E3F00B02B3F0000803F0000000000000000000000000000000000000000000000000000000000A00E3F00F0103F0000803F00000000000000000000000000000000000000000000000000000000
-  m_Bindpose:
-  - e00: 0.9997784
-    e01: 0.0210488
-    e02: 0
-    e03: -2.198848
-    e10: -0.0210488
-    e11: 0.9997784
-    e12: 0
-    e13: 2.453321
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  textureRect:
+fileFormatVersion: 2
+guid: 6ca6960cf05bc2946b157f6afaf274d5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
     serializedVersion: 2
-    x: 570.5
-    y: 1159.5
-    width: 364
-    height: 215
-  textureRectOffset: {x: 0, y: 0}
-  atlasRectOffset: {x: -1, y: -1}
-  settingsRaw: 64
-  uvTransform: {x: 4, y: 752, z: 4, w: 1266.5}
-  downscaleMultiplier: 1
-m_PhysicsShape: []
-m_Bones:
-- name: "mouth"
-  guid: "c47cccc5181210549a6fcf0fc8135108"
-  position: {x: 2.25, y: -2.406494, z: 0}
-  rotation: {x: 0, y: 0, z: 0.01052498, w: 0.9999446}
-  length: 16.3038
-  parentId: -1
-  color:
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 2
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
     serializedVersion: 2
-    rgba: 4294901888
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

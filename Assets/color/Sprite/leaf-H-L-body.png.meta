@@ -1,183 +1,140 @@
-m_Name: "leaf-H-L-body"
-m_Rect:
-  serializedVersion: 2
-  x: 535
-  y: 201.5
-  width: 234.5
-  height: 238
-m_Offset: {x: 0, y: 0}
-m_Border: {x: 0, y: 0, z: 0, w: 0}
-m_PixelsToUnits: 4
-m_Pivot: {x: 0.5, y: 0.5}
-m_Extrude: 1
-m_IsPolygon: 0
-m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: 6575500541080894714
-m_AtlasTags: []
-m_SpriteAtlas: {fileID: 0}
-m_RD:
-  serializedVersion: 3
-  texture: {fileID: 2800000, guid: d54f02bc8b6d391418b6f0bdbfd6a8b0, type: 3}
-  alphaTexture: {fileID: 0}
-  secondaryTextures: []
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 66
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 24
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
-  m_IndexBuffer: 0000020001000B000F000C000A0010000F000A000F000B00090011001000090010000A000800120011000800110009000700130012000700120008000600140013000600130007000500160015000500150014000500140006000400160005000300170016000300160004000200170003000000170002000C000E000D000C000F000E00
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 24
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 1
-      offset: 0
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 1
-      offset: 8
-      format: 0
-      dimension: 4
-    - stream: 1
-      offset: 24
-      format: 10
-      dimension: 4
-    m_DataSize: 54638D416F52EDC1000000000000803F0000000000000000000080BF3845DF41A5EFECC1000000000000803F0000000000000000000080BFAC1CE741E1BA8DC1000000000000803F0000000000000000000080BFA806E84128DC1DC1000000000000803F0000000000000000000080BF6210DF41F0A716C0000000000000803F0000000000000000000080BFE690C741205A9640000000000000803F0000000000000000000080BF7C3FA141FC292A41000000000000803F0000000000000000000080BF2C876841D0F77F41000000000000803F0000000000000000000080BF345E0541F813A541000000000000803F0000000000000000000080BF500EC53F42E0C441000000000000803F0000000000000000000080BF2085B3C0AAB1DB41000000000000803F0000000000000000000080BFA24550C10C82E941000000000000803F0000000000000000000080BF5C0FA6C1986EEF41000000000000803F0000000000000000000080BFDFCFE3C11A2FE941000000000000803F0000000000000000000080BF0000EBC11098BF41000000000000803F0000000000000000000080BF9603E5C1500D5B41000000000000803F0000000000000000000080BF3B5FD9C10056C740000000000000803F0000000000000000000080BF5879C3C1904383BF000000000000803F0000000000000000000080BF448BA5C1A8C6FEC0000000000000803F0000000000000000000080BF064181C1D5F863C1000000000000803F0000000000000000000080BFCC4C2EC14676A0C1000000000000803F0000000000000000000080BFCCA19DC08796C9C1000000000000803F0000000000000000000080BFC8761040F628E1C1000000000000803F0000000000000000000080BFE8821D410000EEC1000000000000803F0000000000000000000080BF6ACC343FC8D6C93D0000803F00000000000000000000000000000000000000000000000000000000A7083F3F2E08CA3D0000803F000000000000000000000000000000000000000000000000000000009603403F90A2F93D0000803F00000000000000000000000000000000000000000000000000000000D520403F7B840C3E0000803F000000000000000000000000000000000000000000000000000000000C023F3FC08A1B3E38B31E3F9099C23E0000000000000000000000000100000000000000000000001D123C3FA2A5293E0000803F00000000000000000000000001000000000000000000000000000000F047373F4085353E0000803F0000000000000000000000000100000000000000000000000000000073A8313FFA3E403E29127C3FB6757B3C000000000000000001000000020000000000000000000000E3752B3FFE84493E238B6D3FECA6933D0000000000000000020000000100000000000000000000001DAA243F1078513E0000803F00000000000000000000000002000000000000000000000000000000D7831D3F6A2C573E0000803F00000000000000000000000002000000000000000000000000000000A61B163F83A05A3E0000803F00000000000000000000000002000000000000000000000000000000145E0E3FA61B5C3E0000803F0000000000000000000000000200000000000000000000000000000004A6063FC68B5A3E0000803F0000000000000000000000000200000000000000000000000000000000C0053F0426503E0000803F000000000000000000000000020000000000000000000000000000008D7F063FAAA13B3E0000803F0000000000000000000000000200000000000000000000000000000019F4073F60B52C3E0000803F00000000000000000000000002000000000000000000000000000000D5B00A3FF2321E3E0000803F00000000000000000000000002000000000000000000000000000000986E0E3F9653103E96B73A3FD4908A3E000000000000000002000000010000000000000000000000DFF7123FE5C0033E0000803F00000000000000000000000001000000000000000000000000000000333B183FDD44F03D0000803F00000000000000000000000001000000000000000000000000000000F2321E3FBCB4DB3D0000803F00000000000000000000000001000000000000000000000000000000DB61253F85EBCF3DC8E44C3FE06C4C3E0000000000000000000000000100000000000000000000002EF82C3F0080C93D0000803F00000000000000000000000000000000000000000000000000000000
-  m_Bindpose:
-  - e00: -0.6604196
-    e01: 0.750897
-    e02: 0
-    e03: 38.66405
-    e10: -0.750897
-    e11: -0.6604196
-    e12: 0
-    e13: 1.375302
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  - e00: -0.6937668
-    e01: 0.7201999
-    e02: 0
-    e03: 19.74027
-    e10: -0.7201999
-    e11: -0.6937668
-    e12: 0
-    e13: 0.4813097
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  - e00: -0.7102695
-    e01: 0.7039301
-    e02: 0
-    e03: -6.215185
-    e10: -0.7039301
-    e11: -0.7102695
-    e12: 0
-    e13: 0.6254529
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  textureRect:
+fileFormatVersion: 2
+guid: d54f02bc8b6d391418b6f0bdbfd6a8b0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
     serializedVersion: 2
-    x: 535
-    y: 201.5
-    width: 235
-    height: 239
-  textureRectOffset: {x: 0, y: 0}
-  atlasRectOffset: {x: -1, y: -1}
-  settingsRaw: 64
-  uvTransform: {x: 4, y: 652.5, z: 4, w: 320.5}
-  downscaleMultiplier: 1
-m_PhysicsShape: []
-m_Bones:
-- name: "leaf-L-1"
-  guid: "b4b7f19c716a55843a6ec92d3c63428d"
-  position: {x: 26.5672, y: -28.12444, z: 0}
-  rotation: {x: 0, y: 0, z: 0.9111585, w: 0.4120562}
-  length: 18.96588
-  parentId: -1
-  color:
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 2
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
     serializedVersion: 2
-    rgba: 4294902015
-- name: "leaf-L-2"
-  guid: "87b850c441a41314d92fa62c85782426"
-  position: {x: 18.96587, y: -6.259146E-06, z: 0}
-  rotation: {x: 0, y: 0, z: 0.02266239, w: 0.9997432}
-  length: 25.96826
-  parentId: 0
-  color:
-    serializedVersion: 2
-    rgba: 4278255488
-- name: "leaf-L-3"
-  guid: "ea764879fd74d954b8cef6d4ebe83211"
-  position: {x: 25.96828, y: 4.79344E-05, z: 0}
-  rotation: {x: 0, y: 0, z: 0.01158708, w: 0.9999329}
-  length: 27.05596
-  parentId: 1
-  color:
-    serializedVersion: 2
-    rgba: 4286643968
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

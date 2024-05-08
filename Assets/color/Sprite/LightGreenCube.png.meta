@@ -1,0 +1,119 @@
+m_Name: "LightGreenCube"
+m_Rect:
+  serializedVersion: 2
+  x: 0
+  y: 0
+  width: 139
+  height: 165
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 100
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:946a277ab736e5a4fa1c44d9bb6a39e6: 21300000
+m_AtlasTags:
+- "GamePlay"
+m_SpriteAtlas: {fileID: 68707889500000, guid: 328fc9aeb55e260459e5f3d126e5be9e, type: 2}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 0}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 18
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 070006000500040005000600010005000400030001000400000001000300020001000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 85EB313FE17A343F00000000A4701D3F333353BF0000000085EB313FF6283CBF0000000048E11A3F3333533F0000000048E11ABF3333533F00000000A4701DBF333353BF0000000085EB31BFF6283C3F0000000085EB31BFE17A34BF0000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose: []
+  textureRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 139
+    height: 165
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 100, y: 69.5, z: 100, w: 82.5}
+  downscaleMultiplier: 1
+m_PhysicsShape:
+- - {x: -0.555, y: 0.825}
+  - {x: -0.665, y: 0.715}
+  - {x: -0.695, y: 0.635}
+  - {x: -0.695, y: -0.675}
+  - {x: -0.605, y: -0.805}
+  - {x: -0.565, y: -0.825}
+  - {x: 0.605, y: -0.825}
+  - {x: 0.695, y: -0.705}
+  - {x: 0.695, y: 0.695}
+  - {x: 0.615, y: 0.825}
+m_Bones: []

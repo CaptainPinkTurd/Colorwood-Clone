@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/4-layout.xml -->
+<resources>
+  <layout name="23">res/layout-v26/abc_screen_toolbar.xml</layout>
+  <layout name="162">res/layout-v26/mtrl_calendar_month.xml</layout>
+</resources>

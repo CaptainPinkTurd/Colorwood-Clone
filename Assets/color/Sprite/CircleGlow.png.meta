@@ -1,0 +1,120 @@
+m_Name: "CircleGlow"
+m_Rect:
+  serializedVersion: 2
+  x: 0
+  y: 0
+  width: 162
+  height: 162
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 100
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:505d33b13cd66f644b7174710e3858e1: 21300000
+m_AtlasTags:
+- "GamePlay"
+m_SpriteAtlas: {fileID: 68707889500000, guid: 3c69d712979d31446a3d0a76a39eadb4, type: 2}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 0}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 21
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 9
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 080007000500060005000700000005000600040005000000030004000000010003000000020001000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 9
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: CDCC0C3F295C4F3F00000000CDCC4C3F1F85EBBE00000000CDCC4C3FCDCCCC3E000000008FC2F53ECDCC4CBF00000000CDCCCCBECDCC4CBF00000000666626BFA4703DBF000000001F852BBF295C4F3F00000000CDCC4CBF6666E63E00000000CDCC4CBFCDCC0CBF000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose: []
+  textureRect:
+    serializedVersion: 2
+    x: 1.07612
+    y: 1.07612
+    width: 159.8477
+    height: 160.8477
+  textureRectOffset: {x: 1.07612, y: 1.07612}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 100, y: 81, z: 100, w: 81}
+  downscaleMultiplier: 1
+m_PhysicsShape:
+- - {x: 0.06, y: 0.24}
+  - {x: -0.19, y: 0.24}
+  - {x: -0.24, y: 0.14}
+  - {x: -0.24, y: -0.15}
+  - {x: -0.23, y: -0.17}
+  - {x: -0.08, y: -0.25}
+  - {x: 0.15, y: -0.25}
+  - {x: 0.18, y: -0.24}
+  - {x: 0.24, y: -0.09}
+  - {x: 0.24, y: 0.13}
+  - {x: 0.16, y: 0.21}
+m_Bones: []

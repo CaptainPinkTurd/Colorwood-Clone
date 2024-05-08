@@ -1,0 +1,109 @@
+m_Name: "ShadowRight"
+m_Rect:
+  serializedVersion: 2
+  x: 0
+  y: 0
+  width: 61
+  height: 149
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 70, z: 0, w: 70}
+m_PixelsToUnits: 100
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:9758df9c860e88f45bfad32c9c7c0288: 21300000
+m_AtlasTags:
+- "GamePlay"
+m_SpriteAtlas: {fileID: 68707889500000, guid: 219f8f42211f4924689f916e61f92ccc, type: 2}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 0}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 12
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 6
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 050004000300000003000400010003000000020001000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 6
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 85EB513E52B83E3F00000000F6289C3E52B83EBF00000000F6289C3E85EB313F0000000052B81EBE52B83EBF00000000F6289CBE52B83E3F00000000F6289CBE3D0A37BF00000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose: []
+  textureRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 61
+    height: 149
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 100, y: 30.5, z: 100, w: 74.5}
+  downscaleMultiplier: 1
+m_PhysicsShape: []
+m_Bones: []

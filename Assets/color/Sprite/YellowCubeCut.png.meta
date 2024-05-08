@@ -1,0 +1,119 @@
+m_Name: "YellowCubeCut"
+m_Rect:
+  serializedVersion: 2
+  x: 0
+  y: 0
+  width: 139
+  height: 153
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 100
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:b5402dc82b63a3547be2dcba8b2fed7d: 21300000
+m_AtlasTags:
+- "GamePlay"
+m_SpriteAtlas: {fileID: 68707889500000, guid: 6b8d727316add1242bf352c258aadb4c, type: 2}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 0}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 15
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 7
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 060005000100040001000500030001000400000001000300020001000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 7
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 85EB313FCDCC2C3F00000000B81E253F0AD743BF0000000085EB313FE17A34BF0000000048E11A3F0AD7433F000000008FC215BF0AD7433F0000000085EB31BF295C2F3F0000000085EB31BF0AD743BF0000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose: []
+  textureRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 139
+    height: 153
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 100, y: 69.5, z: 100, w: 76.5}
+  downscaleMultiplier: 1
+m_PhysicsShape:
+- - {x: 0.635, y: 0.765}
+  - {x: -0.585, y: 0.765}
+  - {x: -0.695, y: 0.645}
+  - {x: -0.695, y: -0.545}
+  - {x: -0.685, y: -0.645}
+  - {x: -0.565, y: -0.765}
+  - {x: 0.545, y: -0.765}
+  - {x: 0.595, y: -0.735}
+  - {x: 0.695, y: -0.615}
+  - {x: 0.695, y: 0.635}
+m_Bones: []

@@ -1,0 +1,121 @@
+m_Name: "Toggles_On"
+m_Rect:
+  serializedVersion: 2
+  x: 0
+  y: 0
+  width: 128
+  height: 85
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 66.40625
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:c4502d76949b56642bfa5b43402d252a: 21300000
+m_AtlasTags:
+- "Settings"
+m_SpriteAtlas: {fileID: 68707889500000, guid: e8aa7b60e08dda84799d63327f819d57, type: 2}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 0}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 15
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 7
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 060005000400000004000500030004000000010003000000020001000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 7
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 49B9763F0AD7233F00000000CF72633F0AD723BF0000000049B9763F1130B5BE000000008B7648BE0AD723BF00000000B30E1EBF40211CBF0000000049B976BF0AD7233F0000000049B976BF2E94FABE0000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose: []
+  textureRect:
+    serializedVersion: 2
+    x: 0
+    y: 0.02675098
+    width: 128
+    height: 84.97325
+  textureRectOffset: {x: 0, y: 0.02675098}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 66.40625, y: 64, z: 66.40625, w: 42.5}
+  downscaleMultiplier: 1
+m_PhysicsShape:
+- - {x: 0.6927059, y: 0.6249412}
+  - {x: 0.6174118, y: 0.64}
+  - {x: -0.602353, y: 0.64}
+  - {x: -0.8131765, y: 0.5647059}
+  - {x: -0.9637647, y: 0.2936471}
+  - {x: -0.9637647, y: -0.1882353}
+  - {x: -0.9035294, y: -0.3538824}
+  - {x: -0.602353, y: -0.5797647}
+  - {x: 0.6475294, y: -0.5797647}
+  - {x: 0.9035294, y: -0.3538824}
+  - {x: 0.9637647, y: -0.2183529}
+  - {x: 0.9637647, y: 0.3689412}
+m_Bones: []

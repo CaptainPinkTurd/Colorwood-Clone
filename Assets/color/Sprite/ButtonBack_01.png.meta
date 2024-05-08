@@ -1,0 +1,130 @@
+m_Name: "ButtonBack_01"
+m_Rect:
+  serializedVersion: 2
+  x: 0
+  y: 0
+  width: 122
+  height: 128
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 60.20087, y: 0, z: 60.20087, w: 0}
+m_PixelsToUnits: 53.27511
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:8e52fab666bbadb41bb946c8f0e6c8e7: 21300000
+m_AtlasTags:
+- "LobbyUI"
+m_SpriteAtlas: {fileID: 68707889500000, guid: 9ecd068b2a97a4e41896447cb2bac557, type: 2}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 0}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 21
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 9
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 080007000500060005000700030005000600040005000300010004000300000001000300020001000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 9
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 5C8F923F018C863F0000000038C18D3F264370BF000000005C8F923F012F28BF000000004A6E533F93C4993F0000000001D2C93E93C499BF00000000DD0345BF93C499BF00000000940A5DBF93C4993F000000005C8F92BF012F283F000000005C8F92BF940A5DBF000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F0000000000000000000000000000000000000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose: []
+  textureRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 122
+    height: 128
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 53.27511, y: 61, z: 53.27511, w: 64}
+  downscaleMultiplier: 1
+m_PhysicsShape:
+- - {x: 0.9572951, y: -0.5443442}
+  - {x: 1.051148, y: -0.3941803}
+  - {x: 1.107459, y: -0.1126229}
+  - {x: 1.107459, y: 0.3378688}
+  - {x: 0.8822131, y: 0.7883607}
+  - {x: 0.4504918, y: 1.107459}
+  - {x: 0.2815574, y: 1.145}
+  - {x: -0.2815574, y: 1.145}
+  - {x: -0.4504918, y: 1.088688}
+  - {x: -0.8822131, y: 0.7883607}
+  - {x: -1.088688, y: 0.4129508}
+  - {x: -1.107459, y: 0.2064754}
+  - {x: -1.107459, y: -0.2440164}
+  - {x: -1.032377, y: -0.3941803}
+  - {x: -0.8822131, y: -0.6569672}
+  - {x: -0.6006557, y: -0.9197541}
+  - {x: -0.3941803, y: -1.013607}
+  - {x: -0.2815574, y: -1.088688}
+  - {x: 0.3003279, y: -1.088688}
+  - {x: 0.6006557, y: -0.9197541}
+  - {x: 0.8822131, y: -0.6381967}
+m_Bones: []

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/raw/raw.xml -->
+<resources>
+  <raw name="0">res/raw/applovin_consent_flow_privacy_policy.json</raw>
+  <raw name="1">res/raw/applovin_consent_flow_terms_of_service_and_privacy_policy.json</raw>
+  <raw name="2">res/raw/applovin_consent_flow_unified_cmp.json</raw>
+  <raw name="3">res/raw/consumer_onesignal_keep.xml</raw>
+  <raw name="4">res/raw/firebase_common_keep.xml</raw>
+  <raw name="5">res/raw/keep_cronet_api.xml</raw>
+  <raw name="6">res/raw/notification.wav</raw>
+  <raw name="7">res/raw/omsdk_v_1_0.js</raw>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/string/1-string.xml -->
+<resources>
+  <string name="1">landscape</string>
+  <string name="2">portrait</string>
+  <string name="3">maximize</string>
+  <string name="4">phone</string>
+  <string name="5">tablet</string>
+</resources>

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package gateway.v1;
+
+option swift_prefix = "Gateway";
+
+message SessionCounters {
+  // Count of LOAD request
+  int32 load_requests = 1;
+  // Count of LOAD request with provided Ad Markup (Header Bidding Load Request)
+  int32 load_requests_adm = 2;
+}

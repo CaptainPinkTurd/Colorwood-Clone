@@ -1,0 +1,158 @@
+m_Name: "brow-R"
+m_Rect:
+  serializedVersion: 2
+  x: 645
+  y: 581
+  width: 106
+  height: 35.5
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 4
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: 808254502281004182
+m_AtlasTags: []
+m_SpriteAtlas: {fileID: 0}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 2800000, guid: 2eb5f5bd3970b0b4089d4838569dbb47, type: 3}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 30
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 12
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 00000B00010001000B00020002000B00030003000A00040003000B000A0004000800050004000900080004000A000900050007000600050008000700
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 12
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 0000544100008EC0000000000000803F0000000000000000000080BF0000544100008E40000000000000803F0000000000000000000080BFE0C5F24000008E40000000000000803F0000000000000000000080BFD0F7134000008E40000000000000803F0000000000000000000080BFCCCC3AC000008E40000000000000803F0000000000000000000080BFDBF903C174938E40000000000000803F0000000000000000000080BF000054C100008E40000000000000803F0000000000000000000080BF000054C100008EC0000000000000803F0000000000000000000080BF774401C100008EC0000000000000803F0000000000000000000080BFB4DC43C000008EC0000000000000803F0000000000000000000080BF6800044000008EC0000000000000803F0000000000000000000080BFCCCCF4404A0C8FC0000000000000803F0000000000000000000080BF00C03B3F0050913E0000803F0000000000000000000000000000000000000000000000000000000000C03B3F00309A3EFFFF7F3F000000000000000000000000000000000000000000000000000000002F16363F00309A3E0000803F00000000000000000000000000000000000000000000000000000000DFCF303F00309A3E0000803F00000000000000000000000000000000000000000000000000000000CD942B3F00309A3E0000803F000000000000000000000000010000000000000000000000000000006240263F9C349A3E0000803F000000000000000000000000010000000000000000000000000000000040213F00309A3E0000803F000000000000000000000000010000000000000000000000000000000040213F0050913E0000803F00000000000000000000000001000000000000000000000000000000B96B263F0050913EFFFF7F3F000000000000000000000000010000000000000000000000000000008D702B3F0050913E0000803F000000000000000000000000010000000000000000000000000000000290303F0050913E6BCA3A3F2A6B8A3E0000000000000000000000000100000000000000000000006626363F9E47913E0000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose:
+  - e00: -0.9945866
+    e01: 0.103912
+    e02: 0
+    e03: 12.0277
+    e10: -0.103912
+    e11: -0.9945866
+    e12: 0
+    e13: 0.1290607
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  - e00: -0.9950366
+    e01: 0.09951334
+    e02: 0
+    e03: 0.4697698
+    e10: -0.09951334
+    e11: -0.9950366
+    e12: 0
+    e13: 0.1270018
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  textureRect:
+    serializedVersion: 2
+    x: 645
+    y: 581
+    width: 106
+    height: 36
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 4, y: 698, z: 4, w: 599}
+  downscaleMultiplier: 1
+m_PhysicsShape: []
+m_Bones:
+- name: "brow-R-1"
+  guid: "a3c4a48210590e245ae5c1f49b85a24d"
+  position: {x: 11.976, y: -1.12146, z: 0}
+  rotation: {x: 0, y: 0, z: 0.9986457, w: 0.05202645}
+  length: 11.55849
+  parentId: -1
+  color:
+    serializedVersion: 2
+    rgba: 4286643968
+- name: "brow-R-2"
+  guid: "a57e9aa8c80a2154cb932687475c8f1c"
+  position: {x: 11.5585, y: -1.695841E-05, z: 0}
+  rotation: {x: 0, y: 0, z: 0.002210788, w: 0.9999976}
+  length: 12.07056
+  parentId: 0
+  color:
+    serializedVersion: 2
+    rgba: 4294934528

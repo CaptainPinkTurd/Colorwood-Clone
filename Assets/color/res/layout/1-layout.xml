@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/1-layout.xml -->
+<resources>
+  <layout name="52">res/layout-sw600dp-v13/design_layout_snackbar.xml</layout>
+  <layout name="70">res/layout-sw600dp-v13/ia_fullscreen_activity.xml</layout>
+  <layout name="71">res/layout-sw600dp-v13/ia_rich_media_video.xml</layout>
+  <layout name="168">res/layout-sw600dp-v13/mtrl_layout_snackbar.xml</layout>
+</resources>

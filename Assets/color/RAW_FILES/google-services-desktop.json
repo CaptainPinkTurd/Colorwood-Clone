@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "883860087996",
+    "project_id": "colorwood-sort",
+    "storage_bucket": "colorwood-sort.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883860087996:android:e8239215e7e8c51b295cb9",
+        "android_client_info": {
+          "package_name": "games.burny.color.sort.woody.puzzle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXbSwKyqhadtHBpi8t9lzcMktMgETNIpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

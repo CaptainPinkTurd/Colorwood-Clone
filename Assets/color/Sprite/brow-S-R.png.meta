@@ -1,0 +1,133 @@
+m_Name: "brow-S-R"
+m_Rect:
+  serializedVersion: 2
+  x: 874
+  y: 878.5
+  width: 102
+  height: 55
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 4
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: -4272823921826380558
+m_AtlasTags: []
+m_SpriteAtlas: {fileID: 0}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 2800000, guid: edf7c442b4c885f42ba45195a569403b, type: 3}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 000002000100000003000200
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 00004C410000DCC0000000000000803F0000000000000000000080BF00004C410000DC40000000000000803F0000000000000000000080BF00004CC10000DC40000000000000803F0000000000000000000080BF00004CC10000DCC0000000000000803F0000000000000000000080BF0000743F00A0DB3E0000803F000000000000000000000000000000000000000000000000000000000000743F0060E93E0000803F0000000000000000000000000000000000000000000000000000000000805A3F0060E93E0000803F0000000000000000000000000000000000000000000000000000000000805A3F00A0DB3E0000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose:
+  - e00: -0.9945866
+    e01: 0.103912
+    e02: 0
+    e03: 8.196873
+    e10: -0.103912
+    e11: -0.9945866
+    e12: 0
+    e13: 21.15733
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  textureRect:
+    serializedVersion: 2
+    x: 874
+    y: 878.5
+    width: 102
+    height: 56
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 4, y: 925, z: 4, w: 906}
+  downscaleMultiplier: 1
+m_PhysicsShape: []
+m_Bones:
+- name: "brow-R-1"
+  guid: "a3c4a48210590e245ae5c1f49b85a24d"
+  position: {x: 10.351, y: 20.19104, z: 0}
+  rotation: {x: 0, y: 0, z: 0.9986457, w: 0.05202645}
+  length: 11.55849
+  parentId: -1
+  color:
+    serializedVersion: 2
+    rgba: 4286643968

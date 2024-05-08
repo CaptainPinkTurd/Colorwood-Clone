@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/3-drawable.xml -->
+<resources>
+  <drawable name="326">res/drawable/material_ic_keyboard_arrow_left_black_24dp.xml</drawable>
+  <drawable name="327">res/drawable/material_ic_keyboard_arrow_right_black_24dp.xml</drawable>
+</resources>

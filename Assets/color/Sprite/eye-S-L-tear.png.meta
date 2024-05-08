@@ -1,0 +1,133 @@
+m_Name: "eye-S-L-tear"
+m_Rect:
+  serializedVersion: 2
+  x: 820
+  y: 705.5
+  width: 122
+  height: 64.5
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 4
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: -2762235978664325147
+m_AtlasTags: []
+m_SpriteAtlas: {fileID: 0}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 2800000, guid: 962edf5ec631b1b47b1f13a2976dc458, type: 3}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 000002000100000003000200
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 00007441000001C1000000000000803F0000000000000000000080BF0000744100000141000000000000803F0000000000000000000080BF000074C100000141000000000000803F0000000000000000000080BF000074C1000001C1000000000000803F0000000000000000000080BF00806B3F0050B03E0000803F0000000000000000000000000000000000000000000000000000000000806B3F0070C03E0000803F0000000000000000000000000000000000000000000000000000000000004D3F0070C03E0000803F0000000000000000000000000000000000000000000000000000000000004D3F0050B03E0000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose:
+  - e00: 0.9999446
+    e01: 0.01052342
+    e02: 0
+    e03: 1.565771
+    e10: -0.01052342
+    e11: 0.9999446
+    e12: 0
+    e13: -8.39298
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  textureRect:
+    serializedVersion: 2
+    x: 820
+    y: 705.5
+    width: 122
+    height: 65
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 4, y: 881, z: 4, w: 737.5}
+  downscaleMultiplier: 1
+m_PhysicsShape: []
+m_Bones:
+- name: "eye-L"
+  guid: "7a7be32dc0efa9348afac2590a72b8d6"
+  position: {x: -1.654007, y: 8.376038, z: 0}
+  rotation: {x: 0, y: 0, z: 0.005261783, w: 0.9999862}
+  length: 16.30109
+  parentId: -1
+  color:
+    serializedVersion: 2
+    rgba: 4286578943

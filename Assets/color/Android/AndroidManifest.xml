@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="12593" package="games.burny.color.sort.woody.puzzle" split="config.arm64_v8a" http://schemas.android.com/apk/distribution:splitTypes="base__abi">
+	<application android:hasCode="False" android:extractNativeLibs="True">
+		<meta-data android:name="com.android.vending.derived.apk.id" android:value="3" />
+	</application>
+</manifest>

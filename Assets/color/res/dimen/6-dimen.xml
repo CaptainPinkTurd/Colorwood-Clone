@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/dimen/6-dimen.xml -->
+<resources>
+  <dimen name="402">{4:1042536202}</dimen>
+  <dimen name="403">{4:1045220557}</dimen>
+  <dimen name="404">{4:1053609165}</dimen>
+  <dimen name="405">{4:1039516303}</dimen>
+  <dimen name="576">{4:1047904911}</dimen>
+  <dimen name="577">{4:1053609165}</dimen>
+  <dimen name="578">{4:1053609165}</dimen>
+  <dimen name="579">{4:1047904911}</dimen>
+  <dimen name="581">{4:1039516303}</dimen>
+  <dimen name="582">{4:1045220557}</dimen>
+  <dimen name="583">{4:1045220557}</dimen>
+  <dimen name="584">{4:1039516303}</dimen>
+</resources>

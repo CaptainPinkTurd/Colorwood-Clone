@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/3-layout.xml -->
+<resources>
+  <layout name="87">res/layout-ldrtl-v17/material_textinput_timepicker.xml</layout>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/21-drawable.xml -->
+<resources>
+  <drawable name="181">res/drawable-night-anydpi-v21/applovin_ic_baseline_add_circle_outline.xml</drawable>
+  <drawable name="221">res/drawable-night-anydpi-v21/applovin_ic_warning_outline.xml</drawable>
+</resources>

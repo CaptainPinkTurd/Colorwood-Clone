@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/bool/1-bool.xml -->
+<resources>
+  <bool name="2">False</bool>
+  <bool name="4">True</bool>
+</resources>

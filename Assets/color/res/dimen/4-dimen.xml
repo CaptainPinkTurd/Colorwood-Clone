@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/dimen/4-dimen.xml -->
+<resources>
+  <dimen name="23">440dp</dimen>
+  <dimen name="28">4.814827E-36%</dimen>
+  <dimen name="29">1.348151E-34%</dimen>
+  <dimen name="30">4.814827E-36%</dimen>
+  <dimen name="31">1.348151E-34%</dimen>
+  <dimen name="34">2.708341E-36%</dimen>
+  <dimen name="35">4.333341E-35%</dimen>
+</resources>

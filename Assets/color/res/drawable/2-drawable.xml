@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/2-drawable.xml -->
+<resources>
+  <drawable name="35">res/drawable-watch-v20/abc_dialog_material_background.xml</drawable>
+</resources>

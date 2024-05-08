@@ -1,0 +1,35 @@
+  m_Name: "slider thumb"
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  m_Width: 8
+  m_Height: 12
+  m_CompleteImageSize: 192
+  m_MipsStripped: 0
+  m_TextureFormat: 13
+  m_MipCount: 1
+  m_IsReadable: 0
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 0000010008000B000B0008000100000002000B004C447C777C774C440B00020008004C447C777C777C777C774C4408000C007C777C777C777C777C777C770C000C007C776C666C666C666C667C770C000C007C775C556C666C666C667C770C000C007C778C888C888C888C887C770C000C008C888C888C888C888C888C880C000C009C999C999C999C999C999C990C0008006C66ACAAACAAACAAACAA6C66080001000B006C66BCBBBCBB6C660B0002000000010008000B000B00080001000000
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 

@@ -1,0 +1,133 @@
+m_Name: "leaf-H-L-shadow"
+m_Rect:
+  serializedVersion: 2
+  x: 548
+  y: 1380
+  width: 262.5
+  height: 139
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 4
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: -8348485459640135040
+m_AtlasTags: []
+m_SpriteAtlas: {fileID: 0}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 2800000, guid: 7ad556f80d2d8c349977e6010d23cb0a, type: 3}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 000002000100010002000300
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 004003C200008BC1000000000000803F0000000000000000000080BF0040034200008BC1000000000000803F0000000000000000000080BF004003C200008B41000000000000803F0000000000000000000080BF0040034200008B41000000000000803F0000000000000000000080BF0010093F00802C3F0000803F0000000000000000000000000000000000000000000000000000000000B04A3F00802C3F0000803F000000000000000000000000000000000000000000000000000000000010093F00E03D3F0000803F0000000000000000000000000000000000000000000000000000000000B04A3F00E03D3F0000803F00000000000000000000000000000000000000000000000000000000
+  m_Bindpose:
+  - e00: 0.9998001
+    e01: -0.0199947
+    e02: 0
+    e03: -27.75179
+    e10: 0.0199947
+    e11: 0.9998001
+    e12: 0
+    e13: -1.337291
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  textureRect:
+    serializedVersion: 2
+    x: 548
+    y: 1380
+    width: 263
+    height: 139
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 4, y: 679.5, z: 4, w: 1449.5}
+  downscaleMultiplier: 1
+m_PhysicsShape: []
+m_Bones:
+- name: "leafs"
+  guid: "54ba2088cb208b14b84ab834431f838d"
+  position: {x: 27.77298, y: 0.782135, z: 0}
+  rotation: {x: 0, y: 0, z: -0.009997851, w: 0.9999501}
+  length: 8.580756
+  parentId: -1
+  color:
+    serializedVersion: 2
+    rgba: 4278190335

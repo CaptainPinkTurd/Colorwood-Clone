@@ -1,0 +1,183 @@
+m_Name: "eye-R-close"
+m_Rect:
+  serializedVersion: 2
+  x: 874
+  y: 937.5
+  width: 145
+  height: 32.5
+m_Offset: {x: 0, y: 0}
+m_Border: {x: 0, y: 0, z: 0, w: 0}
+m_PixelsToUnits: 4
+m_Pivot: {x: 0.5, y: 0.5}
+m_Extrude: 1
+m_IsPolygon: 0
+m_RenderDataKey:ffb2fb422bf750745b851aa9792ffc98: -1177790742752378337
+m_AtlasTags: []
+m_SpriteAtlas: {fileID: 0}
+m_RD:
+  serializedVersion: 3
+  texture: {fileID: 2800000, guid: 22ec7d036fd21b4498aeb343b2d38fb4, type: 3}
+  alphaTexture: {fileID: 0}
+  secondaryTextures: []
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0, y: 0, z: 0}
+  m_IndexBuffer: 000002000100000003000200
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 0
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 1
+      offset: 8
+      format: 0
+      dimension: 4
+    - stream: 1
+      offset: 24
+      format: 10
+      dimension: 4
+    m_DataSize: 00009141000082C0000000000000803F0000000000000000000080BF0000914100008240000000000000803F0000000000000000000080BF000091C100008240000000000000803F0000000000000000000080BF000091C1000082C0000000000000803F0000000000000000000080BF00C07E3F0050EA3E0000803F0000000000000000000000000200000000000000000000000000000000C07E3F0070F23E0000803F0000000000000000000000000200000000000000000000000000000000805A3F0070F23E0000803F0000000000000000000000000200000000000000000000000000000000805A3F0050EA3E0000803F00000000000000000000000002000000000000000000000000000000
+  m_Bindpose:
+  - e00: -0.9945866
+    e01: 0.103912
+    e02: 0
+    e03: 9.125587
+    e10: -0.103912
+    e11: -0.9945866
+    e12: 0
+    e13: 37.52997
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  - e00: -0.9950366
+    e01: 0.09951334
+    e02: 0
+    e03: -2.266946
+    e10: -0.09951334
+    e11: -0.9950366
+    e12: 0
+    e13: 37.54039
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  - e00: 0.9991508
+    e01: 0.04120259
+    e02: 0
+    e03: -0.1569578
+    e10: -0.04120259
+    e11: 0.9991508
+    e12: 0
+    e13: -1.199019
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  textureRect:
+    serializedVersion: 2
+    x: 874
+    y: 937.5
+    width: 145
+    height: 33
+  textureRectOffset: {x: 0, y: 0}
+  atlasRectOffset: {x: -1, y: -1}
+  settingsRaw: 64
+  uvTransform: {x: 4, y: 946.5, z: 4, w: 953.5}
+  downscaleMultiplier: 1
+m_PhysicsShape: []
+m_Bones:
+- name: "brow-R-1"
+  guid: "a3c4a48210590e245ae5c1f49b85a24d"
+  position: {x: 12.976, y: 36.37854, z: 0}
+  rotation: {x: 0, y: 0, z: 0.9986457, w: 0.05202645}
+  length: 11.55849
+  parentId: -1
+  color:
+    serializedVersion: 2
+    rgba: 4286643968
+- name: "brow-R-2"
+  guid: "a57e9aa8c80a2154cb932687475c8f1c"
+  position: {x: 11.5585, y: -2.501622E-05, z: 0}
+  rotation: {x: 0, y: 0, z: 0.002210788, w: 0.9999976}
+  length: 12.07056
+  parentId: 0
+  color:
+    serializedVersion: 2
+    rgba: 4294934528
+- name: "eye-R"
+  guid: "288ac2e2b60c6284aa0bd49abad43976"
+  position: {x: 0.1074219, y: 1.204468, z: 0}
+  rotation: {x: 0, y: 0, z: 0.02060567, w: 0.9997877}
+  length: 16.6575
+  parentId: -1
+  color:
+    serializedVersion: 2
+    rgba: 4278255615

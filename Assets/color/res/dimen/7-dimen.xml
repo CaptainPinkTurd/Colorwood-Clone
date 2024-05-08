@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/dimen/7-dimen.xml -->
+<resources>
+  <dimen name="505">4dp</dimen>
+  <dimen name="507">18dp</dimen>
+  <dimen name="508">40dp</dimen>
+  <dimen name="509">2dp</dimen>
+  <dimen name="511">2dp</dimen>
+  <dimen name="512">40dp</dimen>
+  <dimen name="513">40dp</dimen>
+  <dimen name="526">4dp</dimen>
+</resources>

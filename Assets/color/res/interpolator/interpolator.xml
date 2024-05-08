@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/interpolator/interpolator.xml -->
+<resources>
+  <interpolator name="0">res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml</interpolator>
+  <interpolator name="1">res/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml</interpolator>
+  <interpolator name="2">res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml</interpolator>
+  <interpolator name="3">res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml</interpolator>
+  <interpolator name="4">res/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml</interpolator>
+  <interpolator name="5">res/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml</interpolator>
+  <interpolator name="6">res/interpolator/fast_out_slow_in.xml</interpolator>
+  <interpolator name="7">res/interpolator-v21/mtrl_fast_out_linear_in.xml</interpolator>
+  <interpolator name="8">res/interpolator-v21/mtrl_fast_out_slow_in.xml</interpolator>
+  <interpolator name="9">res/interpolator/mtrl_linear.xml</interpolator>
+  <interpolator name="10">res/interpolator-v21/mtrl_linear_out_slow_in.xml</interpolator>
+</resources>

@@ -8,14 +8,14 @@ using UnityEngine;
 [System.Serializable]
 public class WoodHolder : MonoBehaviour
 {
+    [SerializeField] internal WoodHolderStateManager state;
+
     [SerializeField] GameObject chunkStackParent;
     [SerializeField] internal List<CubePiece> cubePieces = new List<CubePiece>();
     [SerializeField] internal List<CubeChunk> chunkStack = new List<CubeChunk>();
     [SerializeField] internal List<CubePiece.WoodType> existedType = new List<CubePiece.WoodType>(); //keep track of the type of wood in the holder
 
-    [SerializeField] internal bool isSelected;
-
-    void Start()
+    void Awake()
     {
         CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
 
@@ -24,7 +24,7 @@ public class WoodHolder : MonoBehaviour
         StackingChunks(); //stacking chunks in order
     }
 
-    private void StackingChunks()
+    internal void StackingChunks()
     {
         List<CubePiece.WoodType> existedChunkType = new List<CubePiece.WoodType>();
         var list = gameObject.transform.GetComponentsInChildren<CubeChunk>().ToList();
@@ -46,7 +46,7 @@ public class WoodHolder : MonoBehaviour
         chunkStack.Reverse();
     }
 
-    private void CubeChunkInitializer()
+    internal void CubeChunkInitializer()
     {
         var list = gameObject.transform.GetComponentsInChildren<CubePiece>().ToList();
         foreach(var cubePiece in cubePieces)
@@ -58,7 +58,7 @@ public class WoodHolder : MonoBehaviour
         list.Sort((left, right) => left.transform.position.y.CompareTo(right.transform.position.y));
         list.Reverse();
 
-        CubePiece prevPiece = null;
+        CubePiece prevPiece = cubePieces?.FirstOrDefault();
         foreach (var piece in list)
         {
             //generate chunk if there hasn't been any objects of that type before
@@ -107,32 +107,6 @@ public class WoodHolder : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (chunkStack.Count == 0  && GameManager.instance.selectedChunk == null) return;
-
-        if(GameManager.instance.selectedChunk == null)
-        {
-            GameManager.instance.selectedChunk = chunkStack.FirstOrDefault();
-            GameManager.instance.selectedChunk.OnSelect();
-            GameManager.instance.lastSelectedHolder = this;
-            isSelected = true;
-        }
-        else
-        {
-            if (isSelected) //if click on the same wood holder again
-            {
-                GameManager.instance.selectedChunk.OnDeselect();
-                GameManager.instance.selectedChunk = null;
-                isSelected = false;
-            }
-            else //if click on a new wood holder
-            {
-                GameManager.instance.selectedChunk.OnNewHolder(GameManager.instance.lastSelectedHolder, this);
-                GameManager.instance.lastSelectedHolder = null;
-                GameManager.instance.selectedChunk = null;
-
-                CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
-                StackingChunks();
-            }
-        }
+        state.currentState.OnClickEvent(state);
     }
 }

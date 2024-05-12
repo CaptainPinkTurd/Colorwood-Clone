@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 9074804210405537767}
   - component: {fileID: 7721981343171285585}
   - component: {fileID: 1555285393661389129}
+  - component: {fileID: 2606394131737270744}
   m_Layer: 0
   m_Name: Wood Holder
   m_TagString: Untagged
@@ -455,6 +456,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ac89a437d1cff41bca6a6e08d0286c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: {fileID: 2606394131737270744}
   chunkStackParent: {fileID: 6910429954542842966}
   cubePieces: []
   chunkStack: []
+  existedType: 
+  isSelected: 0
+--- !u!114 &2606394131737270744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019351769296695960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404efc82b779bf24393920b466226d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodHolder: {fileID: 1555285393661389129}

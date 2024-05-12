@@ -30,7 +30,10 @@ public class CubeChunk : MonoBehaviour
     {
         CubeChunk chunkParent = GameManager.instance.selectedChunk;
         //Remove every pieces inside the chunk out of piece stack
-        int newStack = 0;
+
+        //number of n - 1 same piece currently on top
+        int newStack = holderParent.cubePieces.Count - holderParent.chunkStack.Count;
+
         while (GameManager.instance.selectedChunk.transform.childCount != 0)
         {
             CubePiece cubePiece = chunkParent.transform.GetChild(0).GetComponent<CubePiece>();
@@ -52,15 +55,29 @@ public class CubeChunk : MonoBehaviour
             {
                 newStack++;
                 var addedY = newStack * 0.6f;
-                var newZ = topChunk.transform.localPosition.z - newStack;
-                newPos = new Vector3(0, topChunk.transform.localPosition.y + addedY, newZ);
+                var newY = topChunk.transform.localPosition.y + addedY;
+                newY = newY <= 1.8f ? newY : 1.8f;
+
+                //ABSOLUTELY do NOT tamper with the newZ value if u want the stack to look clean on the outside
+                var newZ = topChunk.transform.localPosition.z - holderParent.cubePieces.Count - newStack;
+
+                newPos = new Vector3(0, newY, newZ);
             }
             cubePiece.transform.localPosition = newPos; 
         }
 
         //Remove chunk out of stack
         lastSelectedHolder.chunkStack.Remove(GameManager.instance.selectedChunk);
-        lastSelectedHolder.isSelected = false;
+
+        //Change last holder state based on condition
+        if(lastSelectedHolder.cubePieces.Count == 0)
+        {
+            lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.emptyState);
+        }
+        else
+        {
+            lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.stackState);
+        }
 
         //Remove existed type in holder (not completed yet)
         bool canRemove = true;

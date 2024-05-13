@@ -27,6 +27,6 @@ public class WoodHolderStateManager : MonoBehaviour
     public void SwitchState(WoodHolderBaseState state)
     {
         currentState = state;
-        state.EnterState(this, woodHolder); 
+        currentState.EnterState(this, woodHolder); 
     }
 }

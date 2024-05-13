@@ -6,10 +6,12 @@ public class WoodHolderStackState : WoodHolderBaseState
 {
     public override void EnterState(WoodHolderStateManager woodHolderState, WoodHolder holder)
     {
-        Debug.Log("Hello from stack state");
         if(holder.cubePieces.Count == 4)
         {
-            Debug.Log("Check win condition");
+            if(holder.existedType.Count == 1 && holder.chunkStack.Count == 1)
+            {
+                Debug.Log("Qualified");
+            }
         }
     }
 
@@ -23,23 +25,22 @@ public class WoodHolderStackState : WoodHolderBaseState
         {
             CubeChunk topChunkType = woodHolderState.woodHolder.chunkStack.FirstOrDefault();
 
-            if (!GameManager.instance.selectedChunk.chunkIdentifier.Equals(topChunkType?.chunkIdentifier))
+            //if select a holder with the same type or a full holder
+            if (!GameManager.instance.selectedChunk.chunkIdentifier.Equals(topChunkType.chunkIdentifier) ||
+                woodHolderState.woodHolder.cubePieces.Count == 4)
             {
                 GameManager.instance.selectedChunk.OnDeselect();
                 GameManager.instance.selectedChunk = null;
 
                 var lastSelectedHolder = GameManager.instance.lastSelectedHolder;
                 lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.stackState);
+
+                woodHolderState.SwitchState(woodHolderState.selectedState);
             }
             else
             {
                 woodHolderState.SwitchState(woodHolderState.placeState);
             }
         }
-    }
-
-    public override void UpdateState(WoodHolderStateManager woodHolderState)
-    {
-        throw new System.NotImplementedException();
     }
 }

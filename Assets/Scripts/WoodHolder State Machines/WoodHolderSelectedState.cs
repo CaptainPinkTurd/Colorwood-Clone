@@ -5,7 +5,6 @@ public class WoodHolderSelectedState : WoodHolderBaseState
 {
     public override void EnterState(WoodHolderStateManager woodHolderState, WoodHolder holder)
     {
-        Debug.Log("Hello from Select state");
         GameManager.instance.selectedChunk = holder.chunkStack.FirstOrDefault();
         GameManager.instance.selectedChunk.OnSelect();
         GameManager.instance.lastSelectedHolder = holder;
@@ -19,10 +18,5 @@ public class WoodHolderSelectedState : WoodHolderBaseState
 
         //holder.isSelected = false;
         woodHolderState.SwitchState(woodHolderState.stackState);
-    }
-
-    public override void UpdateState(WoodHolderStateManager woodHolderState)
-    {
-        throw new System.NotImplementedException();
     }
 }

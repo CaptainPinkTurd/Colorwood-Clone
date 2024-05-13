@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     internal CubeChunk selectedChunk = null;
     internal WoodHolder lastSelectedHolder = null;
+    internal const float heightDifference = 0.6f;
+    internal const float maxHeight = 1.8f;
     // Start is called before the first frame update
     void Awake()
     {

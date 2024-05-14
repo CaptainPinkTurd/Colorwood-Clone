@@ -12,7 +12,12 @@ public class CubePiece : MonoBehaviour
         Yellow,
         Blue,
         Purple,
-        Red
+        Red,
+        Green,
+        Lime,
+        Cyan,
+        Pink,
+        Orange
     };
     [SerializeField] public Wood wood;
     [SerializeField] internal SpriteRenderer sprite;

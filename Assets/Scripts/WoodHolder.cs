@@ -8,7 +8,7 @@ using UnityEngine;
 [System.Serializable]
 public class WoodHolder : MonoBehaviour
 {
-    [SerializeField] internal WoodHolderStateManager state;
+    [SerializeField] internal StateManager state;
 
     [SerializeField] GameObject chunkStackParent;
     [SerializeField] internal List<CubePiece> cubePieces = new List<CubePiece>();

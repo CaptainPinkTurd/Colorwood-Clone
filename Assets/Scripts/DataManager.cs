@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+[System.Serializable]
+public class DataManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static DataManager instance;
 
-    internal CubeChunk selectedChunk = null;
-    internal WoodHolder lastSelectedHolder = null;
+    [SerializeField] internal CubeChunk selectedChunk = null;
+    [SerializeField] internal WoodHolder lastSelectedHolder = null;
+    [SerializeField] internal int pieceNeededToRemove = 0;
+
     internal const float heightDifference = 0.6f;
     internal const float maxHeight = 1.8f;
     // Start is called before the first frame update

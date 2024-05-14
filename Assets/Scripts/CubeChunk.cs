@@ -1,12 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.ExceptionServices;
-using Unity.Burst;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class CubeChunk : MonoBehaviour
 {
@@ -14,12 +9,11 @@ public class CubeChunk : MonoBehaviour
     public GameObject cubeStackParent;
     private float transitionDuration = 0.125f;
 
-    private const float heightDifference = GameManager.heightDifference;
-    private const float maxHeight = GameManager.maxHeight;
+    private const float heightDifference = DataManager.heightDifference;
+    private const float maxHeight = DataManager.maxHeight;
     int iteratorCount = 0;
     private void Start()
     {
-        //CubePiece cube = gameObject.transform.GetChild(0).GetComponent<CubePiece>();
         CubePiece cube = transform.GetComponentInChildren<CubePiece>(); 
         chunkIdentifier = cube.wood.woodType;
     }
@@ -56,7 +50,6 @@ public class CubeChunk : MonoBehaviour
         Vector3 onSelectDestination = new Vector3(0, transform.localPosition.y + heightDifference + 0.3f, transform.localPosition.z);
         StartCoroutine(LerpMovementChunk(transform.localPosition, onSelectDestination));
     }
-
     internal void OnDeselect()
     {
         Vector3 onDselectDestination = new Vector3(0, transform.localPosition.y - heightDifference - 0.3f, transform.localPosition.z);
@@ -64,15 +57,21 @@ public class CubeChunk : MonoBehaviour
     }
     internal void OnNewHolder(WoodHolder lastSelectedHolder, WoodHolder holderParent)
     {
-        CubeChunk chunkParent = GameManager.instance.selectedChunk;
         //Remove every pieces inside the chunk out of piece stack
 
         //number of n - 1 same piece currently on top
         int newStack = holderParent.cubePieces.Count - holderParent.chunkStack.Count;
 
-        while (GameManager.instance.selectedChunk.transform.childCount != 0)
+        int childCountRequirement = 0;
+        if(DataManager.instance.pieceNeededToRemove > 0)
         {
-            CubePiece cubePiece = chunkParent.transform.GetChild(0).GetComponent<CubePiece>();
+            childCountRequirement = DataManager.instance.selectedChunk.transform.childCount - DataManager.instance.pieceNeededToRemove;
+        }
+
+        float addedY = 0;
+        while (DataManager.instance.selectedChunk.transform.childCount > childCountRequirement)
+        {
+            CubePiece cubePiece = lastSelectedHolder.cubePieces.FirstOrDefault();
             lastSelectedHolder.cubePieces.Remove(cubePiece); //remove cube piece out of list
 
             //set new parent for the removed cubePiece
@@ -90,8 +89,9 @@ public class CubeChunk : MonoBehaviour
             else
             {
                 newStack++;
-                var addedY = newStack * heightDifference;
-                var newY = topChunk.transform.localPosition.y + addedY;
+                addedY = newStack * heightDifference;
+                var newY = holderParent.existedType.Count >=2 ? topChunk.transform.localPosition.y + addedY : addedY;
+
                 newY = newY <= maxHeight ? newY : maxHeight;
 
                 //ABSOLUTELY do NOT tamper with the newZ value if u want the stack to look clean on the outside
@@ -99,14 +99,11 @@ public class CubeChunk : MonoBehaviour
 
                 newPos = new Vector3(0, newY, newZ);
             }
-            StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, chunkParent));
+            StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement));
         }
-        
-        //Remove chunk out of stack
-        lastSelectedHolder.chunkStack.Remove(GameManager.instance.selectedChunk);
 
         //Change last holder state based on condition
-        if(lastSelectedHolder.cubePieces.Count == 0)
+        if (lastSelectedHolder.cubePieces.Count == 0)
         {
             lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.emptyState);
         }
@@ -115,26 +112,21 @@ public class CubeChunk : MonoBehaviour
             lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.stackState);
         }
 
-        //Remove existed type in holder
-        bool canRemove = true;
-        foreach(CubeChunk chunk in lastSelectedHolder.chunkStack)
-        {
-            if (!chunk.chunkIdentifier.Equals(chunkParent.chunkIdentifier))
-            {
-                continue;
-            }
-            else
-            {
-                canRemove = false;
-                break;
-            }
-        }
-        if (canRemove) lastSelectedHolder.existedType.Remove(chunkParent.chunkIdentifier);
-    }
+        //Remove chunk out of stack
+        lastSelectedHolder.chunkStack.Remove(DataManager.instance.selectedChunk);
 
-    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, CubeChunk chunkParent)
+        //Remove existed type in old holder
+        CheckForExistType(lastSelectedHolder);
+
+        //if there's still some pieces left after moving then place them back 
+        if (transform.childCount > 0)
+        {
+            OnDeselect();
+        }
+    }
+    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement)
     {
-        var childCount = chunkParent.transform.childCount;
+        var childCount = transform.childCount;
 
         //cooldown for each new iteration
         float iteratorCooldown = 0.0625f;
@@ -152,7 +144,7 @@ public class CubeChunk : MonoBehaviour
 
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, newPos, piece));
 
-        if (childCount != 0) yield break;
+        if (childCount != childCountRequirement) yield break; //look into this tmr
 
         //execute these codes when there's no child left inside the old chunk
 
@@ -160,10 +152,45 @@ public class CubeChunk : MonoBehaviour
         parentHolder.CubeChunkInitializer();
         parentHolder.StackingChunks();
 
-        //destroy the old chunk inside the old holder
-        Destroy(chunkParent.gameObject);
+        //destroy the old chunk and repivot the newly created chunk in the old holder
+        RepivotChunk();
+
+        Destroy(gameObject); //game object is the old chunk cause this code is running from the old chunk itself
 
         //revert conditional values to its initial state
         iteratorCount = 0;
+    }
+
+    private void RepivotChunk()
+    {
+        var lastSelectedHolder = transform.GetComponentInParent<WoodHolder>();
+
+        foreach (var cubePiece in transform.GetComponentsInChildren<CubePiece>().ToList())
+        {
+            cubePiece.transform.SetParent(lastSelectedHolder.transform);
+            lastSelectedHolder.cubePieces.Remove(cubePiece);
+        }
+
+        lastSelectedHolder.CubeChunkInitializer();
+        lastSelectedHolder.StackingChunks();
+
+        lastSelectedHolder.chunkStack.Remove(this);
+    }
+    private void CheckForExistType(WoodHolder lastSelectedHolder)
+    {
+        bool canRemove = true;
+        foreach (CubeChunk chunk in lastSelectedHolder.chunkStack)
+        {
+            if (!chunk.chunkIdentifier.Equals(chunkIdentifier))
+            {
+                continue;
+            }
+            else
+            {
+                canRemove = false;
+                break;
+            }
+        }
+        if (canRemove) lastSelectedHolder.existedType.Remove(chunkIdentifier);
     }
 }

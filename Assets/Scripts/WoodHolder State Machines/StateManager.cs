@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodHolderStateManager : MonoBehaviour
+public class StateManager : MonoBehaviour
 {
     [SerializeField] internal WoodHolder woodHolder;
-    internal WoodHolderBaseState currentState;
+    internal IWoodHolderState currentState;
 
-    public WoodHolderEmptyState emptyState = new WoodHolderEmptyState();
-    public WoodHolderStackState stackState = new WoodHolderStackState();   
-    public WoodHolderSelectedState selectedState = new WoodHolderSelectedState();
-    public WoodHolderPlaceState placeState = new WoodHolderPlaceState();
+    public EmptyState emptyState = new EmptyState();
+    public StackState stackState = new StackState();   
+    public SelectedState selectedState = new SelectedState();
+    public PlaceState placeState = new PlaceState();
     // Start is called before the first frame update 
     void Start()
     {
@@ -24,7 +24,7 @@ public class WoodHolderStateManager : MonoBehaviour
         }
         currentState.EnterState(this, woodHolder);
     }
-    public void SwitchState(WoodHolderBaseState state)
+    public void SwitchState(IWoodHolderState state)
     {
         currentState = state;
         currentState.EnterState(this, woodHolder); 

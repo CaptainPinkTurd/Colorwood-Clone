@@ -137,7 +137,7 @@ public class CubeChunk : MonoBehaviour
 
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, newPos, piece));
 
-        if (childCount != childCountRequirement) yield break; //look into this tmr
+        if (childCount != childCountRequirement) yield break; 
 
         //execute these codes when there's no child left inside the old chunk
 

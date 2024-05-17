@@ -9,6 +9,7 @@ public class View : CustomUIComponent
     public ViewSO viewData;
 
     public GameObject containerTop;
+    public GameObject containerMiddle;
     public GameObject containerBottom;
 
     private Image imageTop;

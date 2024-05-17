@@ -10,10 +10,11 @@ public class DataManager : MonoBehaviour
     [SerializeField] internal CubeChunk selectedChunk = null;
     [SerializeField] internal WoodHolder lastSelectedHolder = null;
     [SerializeField] internal int pieceNeededToRemove = 0;
+    [SerializeField] internal int winCountdown = 0;
 
     internal const float heightDifference = 0.6f;
     internal const float maxHeight = 1.8f;
-    // Start is called before the first frame update
+
     void Awake()
     {
         if(instance == null)

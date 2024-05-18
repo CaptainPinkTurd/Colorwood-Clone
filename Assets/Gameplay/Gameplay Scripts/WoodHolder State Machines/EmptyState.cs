@@ -11,6 +11,7 @@ public class EmptyState : IWoodHolderState
     {
         if (DataManager.instance.selectedChunk == null) return;
 
+        DataManager.instance.pieceNeededToRemove = 0;
         woodHolderState.SwitchState(woodHolderState.placeState);
     }
 }

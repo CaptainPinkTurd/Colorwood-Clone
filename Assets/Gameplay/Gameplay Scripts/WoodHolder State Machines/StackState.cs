@@ -56,11 +56,17 @@ public class StackState : IWoodHolderState
                     DataManager.instance.pieceNeededToRemove = piecesInSelectedChunk > piecesInChunk && holder.existedType.Count == 1
                         ? 2 : piecesInSelectedChunk == piecesInChunk ? 1 : Mathf.Abs(piecesInSelectedChunk - piecesInChunk);
                 } 
-                else if (totalPieces == 4 && holder.existedType.Count >= 2 || (totalPieces < 4 && holder.cubePieces.Count >= 3))
+                else if (totalPieces == 4 && holder.existedType.Count >= 2)
                 {
-                    //if each side has 2 pieces of the same type and the targeted holder contain 3 pieces (more than 1 type) then only move 1 piece 
-                    DataManager.instance.pieceNeededToRemove = piecesInSelectedChunk == piecesInChunk || holder.cubePieces.Count >= 3 
-                        ? 1 : Mathf.Abs(piecesInSelectedChunk - piecesInChunk);
+                    //if each side has 2 pieces of the same type then only move 1 piece 
+                    DataManager.instance.pieceNeededToRemove = piecesInSelectedChunk == piecesInChunk ? 1 
+                        : Mathf.Abs(piecesInSelectedChunk - piecesInChunk);
+                }  
+                else if(totalPieces < 4 && holder.cubePieces.Count >= 3)
+                {
+                    //if holder is 1 piece  away from being filled then you either move only 1 piece from selected chunk or move the entire chunk
+                    //(which consist only 1 piece)
+                    DataManager.instance.pieceNeededToRemove = piecesInSelectedChunk > piecesInChunk ? 1 : 0;
                 }
 
                 woodHolderState.SwitchState(woodHolderState.placeState);

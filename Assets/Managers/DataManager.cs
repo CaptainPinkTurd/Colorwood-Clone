@@ -15,6 +15,8 @@ public class DataManager : MonoBehaviour
     internal const float heightDifference = 0.6f;
     internal const float maxHeight = 1.8f;
 
+    //internal Stack<ICommand> commandList = new Stack<ICommand>();
+
     void Awake()
     {
         if(instance == null)

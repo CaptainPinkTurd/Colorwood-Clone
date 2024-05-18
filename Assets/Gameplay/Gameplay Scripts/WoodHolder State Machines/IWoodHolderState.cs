@@ -11,4 +11,8 @@ public interface IWoodHolderState
     {
 
     }
+    void ExitState()
+    {
+
+    }
 }

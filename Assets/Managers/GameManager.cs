@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     [SerializeField] GameObject endGamePopup;
     public GameEvent onEndGame;
-    public static GameManager instance;
+    internal NewHolderInvoker newHolderInvoker;
+    internal bool undoing;
 
     void Awake()
     {
@@ -23,6 +26,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        newHolderInvoker = new NewHolderInvoker();
+
         var popUp = Instantiate(endGamePopup, Vector3.zero, Quaternion.identity);
         DontDestroyOnLoad(popUp);  
     }
@@ -30,9 +35,18 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         DataManager.instance.winCountdown = 0;
+        undoing = false;
     }
     public void OnEndGame()
     {
         onEndGame.RaiseEvent();
+    }
+    public void UndoPiece()
+    {
+        if (!undoing)
+        {
+            undoing = true;
+            newHolderInvoker.UndoCommand();
+        }
     }
 }

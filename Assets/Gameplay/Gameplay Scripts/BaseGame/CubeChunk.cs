@@ -57,7 +57,7 @@ public class CubeChunk : MonoBehaviour
         Vector3 onDselectDestination = new Vector3(0, transform.localPosition.y - heightDifference - 0.3f, transform.localPosition.z);
         StartCoroutine(LerpMovementChunk(transform.localPosition, onDselectDestination));
     }
-    internal void OnNewHolder(WoodHolder lastSelectedHolder, WoodHolder holderParent)
+    internal void OnNewHolder(WoodHolder lastSelectedHolder, WoodHolder holderParent, bool undo)
     {
         //number of n - 1 same piece currently on top
         int newStack = holderParent.cubePieces.Count - holderParent.chunkStack.Count;
@@ -65,6 +65,7 @@ public class CubeChunk : MonoBehaviour
         int childCountRequirement = 0;
         if(DataManager.instance.pieceNeededToRemove > 0)
         {
+            //only calculate this when there's more than 0 piece needed to separate from chunk
             childCountRequirement = DataManager.instance.selectedChunk.transform.childCount - DataManager.instance.pieceNeededToRemove;
         }
 
@@ -99,6 +100,7 @@ public class CubeChunk : MonoBehaviour
 
                 //ABSOLUTELY do NOT tamper with the newZ value if u want the stack to look clean on the outside
                 var newZ = topChunk.transform.localPosition.z - holderParent.cubePieces.Count - newStack;
+                newZ = newZ >= -14 ? newZ : -14; 
 
                 newPos = new Vector3(0, newY, newZ);
             }
@@ -112,7 +114,7 @@ public class CubeChunk : MonoBehaviour
         CheckForExistType(lastSelectedHolder);
 
         //if there's still some pieces left after moving then place them back 
-        if (transform.childCount > 0)
+        if (transform.childCount > 0 && !undo)
         {
             OnDeselect();
         }
@@ -137,7 +139,7 @@ public class CubeChunk : MonoBehaviour
 
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, newPos, piece));
 
-        if (childCount != childCountRequirement) yield break; 
+        if (childCount != childCountRequirement) yield break;
 
         //execute these codes when there's no child left inside the old chunk
 
@@ -152,7 +154,10 @@ public class CubeChunk : MonoBehaviour
         Destroy(gameObject); 
 
         //raise event to check for holders condition and determine new state for all of them
-        onNewHolder.RaiseEvent(); 
+        onNewHolder.RaiseEvent();
+
+        //allow player to undo again if they were undoing a piece
+        GameManager.instance.undoing = false;
 
         //revert conditional values to its initial state
         iteratorCount = 0;

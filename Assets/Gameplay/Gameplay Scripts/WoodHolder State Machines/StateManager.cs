@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -30,21 +31,24 @@ public class StateManager : MonoBehaviour
     }
     public void SwitchState(IWoodHolderState state)
     {
+        currentState.ExitState();
         currentState = state;
         currentState.EnterState(this, woodHolder); 
     }
     public void CheckForState()
     {
+        IWoodHolderState newState;
+
         if (woodHolder.cubePieces.Count == 0)
         {
-            currentState = emptyState;
+            newState = emptyState;
         }
         else
         {
-            if (currentState == qualifiedState) return;
+            if (currentState == qualifiedState && woodHolder.cubePieces.Count == 4) return;
 
-            currentState = stackState;
+            newState = stackState;
         }
-        currentState.EnterState(this, woodHolder);
+        SwitchState(newState);
     }
 }

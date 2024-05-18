@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 98883060}
   - component: {fileID: 98883059}
   - component: {fileID: 98883058}
+  - component: {fileID: 98883061}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -277,6 +278,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98883061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98883057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 3c71f7ce8421c8e49b0c07c9bde08de1, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 98883059}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: UndoPiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &252810516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,7 +1518,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2076088381}
+        m_TargetAssemblyTypeName: ButtonViewModel, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2076088381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,8 +1543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde631e0e94c27646a1f852bef611c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buton: {fileID: 0}
-  onClick: {fileID: 0}
+  buton: {fileID: 2076088380}
+  onClick: {fileID: 11400000, guid: 3c71f7ce8421c8e49b0c07c9bde08de1, type: 2}
 --- !u!1 &2113262233
 GameObject:
   m_ObjectHideFlags: 0

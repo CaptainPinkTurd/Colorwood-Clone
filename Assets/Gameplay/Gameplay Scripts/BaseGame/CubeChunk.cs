@@ -93,8 +93,16 @@ public class CubeChunk : MonoBehaviour
                 newStack++;
                 addedY = newStack * heightDifference;
 
+                var topChunkLocalY = topChunk.transform.localPosition.y;
+
+                if(topChunkLocalY % heightDifference >= 0.01)
+                {
+                    //round up the y pos if it's not dividable by 0.6, this is mainly to fix one of the bugs in the undo function
+                    topChunkLocalY -= (topChunkLocalY % heightDifference + heightDifference);
+                }
+
                 //calculate newY based on the number of chunks and their pivot, if local y = 0 then only use addedY
-                var newY = holderParent.existedType.Count >=2 ? topChunk.transform.localPosition.y + addedY : addedY;
+                var newY = holderParent.existedType.Count >=2 ? topChunkLocalY + addedY : addedY;
 
                 newY = newY <= maxHeight ? newY : maxHeight;
 

@@ -11,7 +11,7 @@ public class OnNewHolderCommand : ICommand
         this.holder = holder;
 
         oldHolder = DataManager.instance.lastSelectedHolder;
-        pieceMoveInOldChunk = DataManager.instance.selectedChunk.transform.childCount  - DataManager.instance.pieceNeededToRemove;
+        pieceMoveInOldChunk = DataManager.instance.pieceNeededToRemove == 0 ? DataManager.instance.selectedChunk.transform.childCount : DataManager.instance.pieceNeededToRemove;
     }
     public void Execute()
     {
@@ -29,16 +29,19 @@ public class OnNewHolderCommand : ICommand
         CubeChunk chunk = holder.chunkStack.FirstOrDefault();
         chunk.transform.localPosition = new Vector3(chunk.transform.localPosition.x, chunk.transform.localPosition.y, -5);
 
-        //Move chunk back to previous holder
-        DataManager.instance.selectedChunk.OnNewHolder(holder, oldHolder, true);
+        var lastSelectedHolder = DataManager.instance?.lastSelectedHolder;
 
-        DataManager.instance.selectedChunk = null;
-
-        if(DataManager.instance.lastSelectedHolder != null)
+        if (lastSelectedHolder != null && lastSelectedHolder.state.currentState == lastSelectedHolder.state.selectedState)
         {
             //deselect current floating piece when undo
             CubeChunk selectedChunk = DataManager.instance.lastSelectedHolder.chunkStack.FirstOrDefault();
             selectedChunk.OnDeselect();
         }
+
+        //Move chunk back to previous holder
+        DataManager.instance.selectedChunk.OnNewHolder(holder, oldHolder, true);
+
+        DataManager.instance.selectedChunk = null;
+
     }
 }

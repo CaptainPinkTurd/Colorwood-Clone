@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/menu/menu.xml -->
-<resources>
-  <menu name="0">res/menu/creative_debugger_displayed_ad_activity_menu.xml</menu>
-  <menu name="1">res/menu/mediation_debugger_activity_menu.xml</menu>
-</resources>

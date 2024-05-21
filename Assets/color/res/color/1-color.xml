@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/color/1-color.xml -->
-<resources>
-  <color name="588">res/color-night-v8/material_timepicker_button_stroke.xml</color>
-  <color name="590">res/color-night-v8/material_timepicker_clockface.xml</color>
-  <color name="591">res/color-night-v8/material_timepicker_modebutton_tint.xml</color>
-</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/mipmap/0-mipmap.xml -->
-<resources>
-  <mipmap name="0">res/mipmap-ldpi-v4/app_icon.png</mipmap>
-  <mipmap name="1">res/mipmap-ldpi-v4/app_icon_round.png</mipmap>
-  <mipmap name="2">res/mipmap-ldpi-v4/ic_launcher_background.png</mipmap>
-  <mipmap name="3">res/mipmap-ldpi-v4/ic_launcher_foreground.png</mipmap>
-</resources>

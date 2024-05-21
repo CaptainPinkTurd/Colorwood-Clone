@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/5-layout.xml -->
-<resources>
-  <layout name="83">res/layout-land/material_clock_period_toggle_land.xml</layout>
-  <layout name="90">res/layout-land/material_timepicker.xml</layout>
-  <layout name="174">res/layout-land/mtrl_picker_header_dialog.xml</layout>
-</resources>

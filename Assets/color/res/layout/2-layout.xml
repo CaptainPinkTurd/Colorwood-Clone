@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/2-layout.xml -->
-<resources>
-  <layout name="8">res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml</layout>
-  <layout name="10">res/layout-watch-v20/abc_alert_dialog_title_material.xml</layout>
-</resources>

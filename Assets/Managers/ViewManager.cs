@@ -5,9 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class ViewManager : MonoBehaviour
 {
+    public static ViewManager instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void LoadUiScene()
+    {
+        print("Play scene");
         PlayScene("UI Scene");
     }
     public void PlayScene(string sceneName)

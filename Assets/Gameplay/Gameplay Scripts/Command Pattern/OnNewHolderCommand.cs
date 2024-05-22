@@ -16,6 +16,7 @@ public class OnNewHolderCommand : ICommand
     public void Execute()
     {
         DataManager.instance.selectedChunk.OnNewHolder(oldHolder, holder, false);
+        GameManager.instance.OnNewHolderEvent();
     }
 
     public void Undo()
@@ -27,7 +28,7 @@ public class OnNewHolderCommand : ICommand
 
         //Reposition z position of the once qualified chunk
         CubeChunk chunk = holder.chunkStack.FirstOrDefault();
-        chunk.transform.localPosition = new Vector3(chunk.transform.localPosition.x, chunk.transform.localPosition.y, -5);
+        chunk.transform.localPosition = new Vector3(chunk.transform.localPosition.x, chunk.transform.localPosition.y, 0);
 
         var lastSelectedHolder = DataManager.instance?.lastSelectedHolder;
 

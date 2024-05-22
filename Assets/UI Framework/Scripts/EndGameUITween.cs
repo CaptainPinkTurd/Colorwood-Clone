@@ -10,12 +10,12 @@ public class EndGameUITween : MonoBehaviour
 
     private void Awake()
     {
-        winPopup.transform.LeanScale(Vector3.zero, 0f);
-        backpanel.transform.LeanScale(Vector3.zero, 0f);
-        tickMark.transform.LeanScale(Vector3.zero, 0f);
+        winPopup.transform.localScale = Vector3.zero;
+        backpanel.transform.localScale = Vector3.zero;
+        tickMark.transform.localScale = Vector3.zero;
         tickMark.transform.localPosition = Vector3.zero;
     }
-    public void Tween()
+    public void Start()
     {
         LeanTween.scale(winPopup, new Vector3(150, 150, 150), 2f).setDelay(0.5f).setEase(LeanTweenType.easeOutElastic);
 

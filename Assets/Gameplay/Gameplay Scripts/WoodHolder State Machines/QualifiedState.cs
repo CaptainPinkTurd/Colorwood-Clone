@@ -16,7 +16,7 @@ public class QualifiedState : IWoodHolderState
 
         if(DataManager.instance.winCountdown == 0)
         {
-            GameManager.instance.OnEndGame();
+            GameManager.instance.OnWin();
         }
     }
     public void ExitState()

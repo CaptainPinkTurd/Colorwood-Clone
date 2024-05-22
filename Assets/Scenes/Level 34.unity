@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: e04101ba3db17424aa87d96fce4d3ab7, type: 2}
+  gameEvent: {fileID: 11400000, guid: 556491b5bcd62fe49a803231758d984e, type: 2}
   onEventRaised:
     m_PersistentCalls:
       m_Calls:
@@ -182,8 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f709a919b2c12b5458f0b39cd55f2ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGamePopup: {fileID: 4073503095644283519, guid: eac4f219915a4fc4e8cfd33ef2a09e97, type: 3}
-  onEndGame: {fileID: 11400000, guid: 2940e2bcc90264e4397e85e6e152a3f1, type: 2}
+  winPopup: {fileID: 4073503095644283519, guid: eac4f219915a4fc4e8cfd33ef2a09e97, type: 3}
+  losePopup: {fileID: 8771216079179289838, guid: 09e042e8ac70f2444bfa871a4476e127, type: 3}
+  onNewHolder: {fileID: 11400000, guid: 11dc0fffd8a6ece4585d008c064dd57a, type: 2}
 --- !u!4 &98883060
 Transform:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 98883057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0050049, y: 4.2043386, z: 1269.3453}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 3c71f7ce8421c8e49b0c07c9bde08de1, type: 2}
+  gameEvent: {fileID: 11400000, guid: cc71d7d598789bf49b0d86a610487576, type: 2}
   onEventRaised:
     m_PersistentCalls:
       m_Calls:
@@ -418,6 +419,10 @@ PrefabInstance:
     - target: {fileID: 2268859168864345760, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
       propertyPath: m_Name
       value: Bottom Row
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268859168864345760, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2338413788431391077, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
       propertyPath: m_Name
@@ -785,6 +790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Top Row
       objectReference: {fileID: 0}
+    - target: {fileID: 2268859168864345760, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2338413788431391077, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
       propertyPath: m_Name
       value: Lime Wood
@@ -985,6 +994,10 @@ PrefabInstance:
       propertyPath: wood
       value: 
       objectReference: {fileID: 11400000, guid: bc0281cb1c8d737429369cdc91a1ec3b, type: 2}
+    - target: {fileID: 8383723790832784501, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8389431892065659767, guid: f9c1fcc602706764fa8f8924ee420ab2, type: 3}
       propertyPath: wood
       value: 

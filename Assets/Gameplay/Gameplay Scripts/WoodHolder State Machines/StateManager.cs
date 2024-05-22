@@ -45,7 +45,9 @@ public class StateManager : MonoBehaviour
         }
         else
         {
-            if (currentState == qualifiedState && woodHolder.cubePieces.Count == 4) return;
+            if ((currentState == qualifiedState && woodHolder.cubePieces.Count == 4) || 
+                (currentState == selectedState && DataManager.instance.selectedChunk != null)) return; 
+            //if there's currently a selected chunk while checking then leave that holder state alone
 
             newState = stackState;
         }

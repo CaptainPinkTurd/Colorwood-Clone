@@ -25,7 +25,6 @@ Library: C:\Users\domin\Unity Projects\Colorwood Clone\Temp\BurstOutput\tempburs
 --assembly-defines=UnityEngine;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\domin\Unity Projects\Colorwood Clone\Temp\Burst
---debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\domin\Unity Projects\Colorwood Clone\Library\Burst
 --output=C:\Users\domin\Unity Projects\Colorwood Clone\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated

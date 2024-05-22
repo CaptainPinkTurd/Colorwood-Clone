@@ -49,12 +49,12 @@ public class CubeChunk : MonoBehaviour
     }
     public void OnSelect()
     {
-        Vector3 onSelectDestination = new Vector3(0, transform.localPosition.y + heightDifference + 0.3f, transform.localPosition.z);
+        Vector3 onSelectDestination = new Vector3(0, transform.localPosition.y + heightDifference + 0.3f, -1);
         StartCoroutine(LerpMovementChunk(transform.localPosition, onSelectDestination));
     }
     internal void OnDeselect()
     {
-        Vector3 onDselectDestination = new Vector3(0, transform.localPosition.y - heightDifference - 0.3f, transform.localPosition.z);
+        Vector3 onDselectDestination = new Vector3(0, transform.localPosition.y - heightDifference - 0.3f, -1);
         StartCoroutine(LerpMovementChunk(transform.localPosition, onDselectDestination));
     }
     internal void OnNewHolder(WoodHolder lastSelectedHolder, WoodHolder holderParent, bool undo)
@@ -87,6 +87,8 @@ public class CubeChunk : MonoBehaviour
                 var newY = newStack * heightDifference;
                 newPos = new Vector3(0, newY, -newStack - 1);
                 newStack++;
+
+                cubePiece.sprite.sortingOrder = 0;
             }
             else
             {
@@ -103,14 +105,12 @@ public class CubeChunk : MonoBehaviour
 
                 //calculate newY based on the number of chunks and their pivot, if local y = 0 then only use addedY
                 var newY = holderParent.existedType.Count >=2 ? topChunkLocalY + addedY : addedY;
-
                 newY = newY <= maxHeight ? newY : maxHeight;
 
-                //ABSOLUTELY do NOT tamper with the newZ value if u want the stack to look clean on the outside
-                var newZ = topChunk.transform.localPosition.z - holderParent.cubePieces.Count - newStack;
-                newZ = newZ >= -14 ? newZ : -14; 
+                newPos = new Vector3(0, newY, 0);
 
-                newPos = new Vector3(0, newY, newZ);
+                int layerOrder = Mathf.RoundToInt(newY / heightDifference);
+                cubePiece.sprite.sortingOrder = layerOrder;
             }
             StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement));
         }

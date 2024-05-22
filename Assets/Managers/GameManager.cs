@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject winPopup;
+    [SerializeField] GameObject losePopup;
+
+    [SerializeField] GameEvent onNewHolder;
+
     public static GameManager instance;
 
-    [SerializeField] GameObject endGamePopup;
-    public GameEvent onEndGame;
     internal NewHolderInvoker newHolderInvoker;
     internal bool undoing;
+
+    Vector3 popUpPos;
 
     void Awake()
     {
@@ -28,18 +33,23 @@ public class GameManager : MonoBehaviour
     {
         newHolderInvoker = new NewHolderInvoker();
 
-        var popUp = Instantiate(endGamePopup, Vector3.zero, Quaternion.identity);
-        DontDestroyOnLoad(popUp);  
+        ViewManager.instance.LoadUiScene();
     }
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ViewManager.instance.LoadUiScene();
+
         DataManager.instance.winCountdown = 0;
         undoing = false;
     }
-    public void OnEndGame()
+    public void OnWin()
     {
-        onEndGame.RaiseEvent();
+        Instantiate(winPopup, popUpPos, Quaternion.identity);
+    }
+    public void OnLose()
+    {
+        Instantiate(losePopup, popUpPos, Quaternion.identity);
     }
     public void UndoPiece()
     {
@@ -48,5 +58,9 @@ public class GameManager : MonoBehaviour
             undoing = true;
             newHolderInvoker.UndoCommand();
         }
+    }
+    internal void OnNewHolderEvent()
+    {
+        onNewHolder.RaiseEvent();
     }
 }

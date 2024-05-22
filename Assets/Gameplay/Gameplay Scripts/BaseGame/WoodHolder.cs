@@ -19,9 +19,10 @@ public class WoodHolder : MonoBehaviour
     {
         CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
 
-        ZSort(cubePieces); //reposition the overlapping cube
-
         StackingChunks(); //stacking chunks in order
+
+        LayerSort(chunkStack); //reposition the overlapping cube
+
     }
 
     internal void StackingChunks()
@@ -86,23 +87,20 @@ public class WoodHolder : MonoBehaviour
         cubePieces.Reverse();
     }
 
-    private void ZSort(List<CubePiece> list) //sorting z pos in order for each new piece
+    public void LayerSort(List<CubeChunk> list) //sorting layer in order for each new piece
     {
-        list.Reverse(); //reverse stack from top to bottom
-        CubePiece prevPiece = null;
-
-        foreach (var piece in list)
+        foreach (CubeChunk chunk in list)
         {
-            if (prevPiece != null && prevPiece.transform.position.z <= piece.transform.position.z)
-            {
-                var newZ = prevPiece.transform.localPosition.z - 1;
+            int layerOrder = Mathf.RoundToInt(chunk.transform.localPosition.y / DataManager.heightDifference);
+            int pieceInChunk = chunk.transform.childCount;
 
-                //change piece local position if it's overlapping with the old piece
-                piece.transform.localPosition = new Vector3(piece.transform.localPosition.x, piece.transform.localPosition.y, newZ);
+            for(int i = 0; i < pieceInChunk; i++)
+            {
+                CubePiece piece = chunk.transform.GetChild(i).GetComponent<CubePiece>();
+                piece.sprite.sortingOrder = layerOrder;
+                layerOrder--;
             }
-            prevPiece = piece;
         }
-        list.Reverse(); //change it back
     }
 
     private void OnMouseDown()

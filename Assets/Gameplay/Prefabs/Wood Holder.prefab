@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 7721981343171285585}
   - component: {fileID: 1555285393661389129}
   - component: {fileID: 2606394131737270744}
-  - component: {fileID: 5176847432872500904}
+  - component: {fileID: 6383442805075101675}
   m_Layer: 0
   m_Name: Wood Holder
   m_TagString: Untagged
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodHolder: {fileID: 1555285393661389129}
---- !u!114 &5176847432872500904
+--- !u!114 &6383442805075101675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 034ac34eb731c3040999e1221e19f674, type: 2}
+  gameEvent: {fileID: 11400000, guid: 607b543cc974d2c46b013a557d9d81b2, type: 2}
   onEventRaised:
     m_PersistentCalls:
       m_Calls:

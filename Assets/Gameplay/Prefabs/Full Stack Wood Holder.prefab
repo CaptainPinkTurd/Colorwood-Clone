@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2509229116532673833}
   - component: {fileID: 2831592434566178593}
   - component: {fileID: 1966421057662953215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Full Stack Wood Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,9 +302,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 2831592434566178593}
   chunkStackParent: {fileID: 4791773811982799211}
-  cubePieces: []
-  chunkStack: []
-  existedType: 
 --- !u!114 &2831592434566178593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 034ac34eb731c3040999e1221e19f674, type: 2}
+  gameEvent: {fileID: 11400000, guid: 607b543cc974d2c46b013a557d9d81b2, type: 2}
   onEventRaised:
     m_PersistentCalls:
       m_Calls:

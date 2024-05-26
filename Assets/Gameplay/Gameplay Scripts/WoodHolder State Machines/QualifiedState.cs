@@ -10,7 +10,13 @@ public class QualifiedState : IWoodHolderState
     {
         CubeChunk chunk = holder.chunkStack.FirstOrDefault();
 
-        chunk.transform.localPosition = new Vector3(chunk.transform.localPosition.x, chunk.transform.localPosition.y, 10);
+        int pieceInChunk = chunk.transform.childCount;
+
+        for (int i = 0; i < pieceInChunk; i++)
+        {
+            CubePiece piece = chunk.transform.GetChild(i).GetComponent<CubePiece>();
+            holder.StartCoroutine(LerpWithdrawPiece(Color.white, Color.black, piece));
+        }
 
         DataManager.instance.winCountdown--;
 
@@ -22,5 +28,22 @@ public class QualifiedState : IWoodHolderState
     public void ExitState()
     {
         DataManager.instance.winCountdown++;
+    }
+    IEnumerator LerpWithdrawPiece(Color a, Color b, CubePiece piece)
+    {
+        float timeElapsed = 0;
+        float transitionDuration = 0.45f;
+
+        yield return new WaitForSeconds(0.3f); //suspend until withdraw
+
+        while (timeElapsed < transitionDuration)
+        {
+            float t = (timeElapsed / transitionDuration) * 0.45f;
+
+            piece.sprite.color = Color.Lerp(a, b, t);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
     }
 }

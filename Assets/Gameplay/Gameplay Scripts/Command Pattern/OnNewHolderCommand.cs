@@ -28,7 +28,13 @@ public class OnNewHolderCommand : ICommand
 
         //Reposition z position of the once qualified chunk
         CubeChunk chunk = holder.chunkStack.FirstOrDefault();
-        chunk.transform.localPosition = new Vector3(chunk.transform.localPosition.x, chunk.transform.localPosition.y, 0);
+        int pieceInChunk = chunk.transform.childCount;
+
+        for (int i = 0; i < pieceInChunk; i++)
+        {
+            CubePiece piece = chunk.transform.GetChild(i).GetComponent<CubePiece>();
+            piece.sprite.color = Color.white;
+        }
 
         var lastSelectedHolder = DataManager.instance?.lastSelectedHolder;
 

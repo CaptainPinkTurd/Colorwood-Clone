@@ -21,7 +21,6 @@ public class ViewManager : MonoBehaviour
     }
     public void LoadUiScene()
     {
-        print("Play scene");
         PlayScene("UI Scene");
     }
     public void PlayScene(string sceneName)

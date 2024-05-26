@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Lime Wood
   woodSprite: {fileID: 21300000, guid: 328fc9aeb55e260459e5f3d126e5be9e, type: 3}
   woodType: 5
+  color: {r: 0, g: 0.7686275, b: 0.078431375, a: 0}

@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Purple Wood
   woodSprite: {fileID: 21300000, guid: df0a4d059b618f24ba8a8528dc010000, type: 3}
   woodType: 2
+  color: {r: 0.72156864, g: 0.2901961, b: 0.8980393, a: 0}

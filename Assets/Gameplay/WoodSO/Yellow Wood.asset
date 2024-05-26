@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Yellow Wood
   woodSprite: {fileID: 21300000, guid: 316628ad02d9f8e49a5c2b7c9fe9d26e, type: 3}
   woodType: 0
+  color: {r: 0.98823535, g: 0.62352943, b: 0.039215688, a: 0}

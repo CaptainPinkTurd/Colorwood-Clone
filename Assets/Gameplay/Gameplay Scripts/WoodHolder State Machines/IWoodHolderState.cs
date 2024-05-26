@@ -7,7 +7,7 @@ public interface IWoodHolderState
     {
 
     }
-    void OnClickEvent(StateManager stateManager)
+    void OnClick(StateManager stateManager)
     {
 
     }

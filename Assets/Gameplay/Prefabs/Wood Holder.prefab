@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1555285393661389129}
   - component: {fileID: 2606394131737270744}
   - component: {fileID: 6383442805075101675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wood Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,9 +459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 2606394131737270744}
   chunkStackParent: {fileID: 6910429954542842966}
-  cubePieces: []
-  chunkStack: []
-  existedType: 
 --- !u!114 &2606394131737270744
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Orange Wood
   woodSprite: {fileID: 21300000, guid: c982043a80a602c429ec3dcb057dc94e, type: 3}
   woodType: 8
+  color: {r: 0.9843138, g: 0.2784314, b: 0.039215688, a: 0}

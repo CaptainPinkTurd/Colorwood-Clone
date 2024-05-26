@@ -5,15 +5,15 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-[System.Serializable]
 public class WoodHolder : MonoBehaviour
 {
     [SerializeField] internal StateManager state;
 
     [SerializeField] GameObject chunkStackParent;
-    [SerializeField] internal List<CubePiece> cubePieces = new List<CubePiece>();
-    [SerializeField] internal List<CubeChunk> chunkStack = new List<CubeChunk>();
-    [SerializeField] internal List<CubePiece.WoodType> existedType = new List<CubePiece.WoodType>(); //keep track of the type of wood in the holder
+
+    internal List<CubePiece> cubePieces = new List<CubePiece>();
+    internal List<CubeChunk> chunkStack = new List<CubeChunk>();
+    internal List<CubePiece.WoodType> existedType = new List<CubePiece.WoodType>(); //keep track of the type of wood in the holder
 
     void Awake()
     {
@@ -101,10 +101,5 @@ public class WoodHolder : MonoBehaviour
                 layerOrder--;
             }
         }
-    }
-
-    private void OnMouseDown()
-    {
-        state.currentState.OnClickEvent(state);
     }
 }

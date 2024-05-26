@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class CubeChunk : MonoBehaviour
     public CubePiece.WoodType chunkIdentifier;
     public GameObject cubeStackParent;
     private float transitionDuration = 0.125f;
+    List<int> layerOrder;
 
     private const float heightDifference = DataManager.heightDifference;
     private const float maxHeight = DataManager.maxHeight;
@@ -32,6 +34,7 @@ public class CubeChunk : MonoBehaviour
             yield return null;
         }
         transform.localPosition = destination;
+        DataManager.instance.chunkIsMoving = false;
     }
     IEnumerator LerpMovementPiece(Vector3 localPos, Vector3 destination, CubePiece piece)
     {
@@ -50,11 +53,13 @@ public class CubeChunk : MonoBehaviour
     public void OnSelect()
     {
         Vector3 onSelectDestination = new Vector3(0, transform.localPosition.y + heightDifference + 0.3f, -1);
+        DataManager.instance.chunkIsMoving = true;
         StartCoroutine(LerpMovementChunk(transform.localPosition, onSelectDestination));
     }
     internal void OnDeselect()
     {
         Vector3 onDselectDestination = new Vector3(0, transform.localPosition.y - heightDifference - 0.3f, -1);
+        DataManager.instance.chunkIsMoving = true;
         StartCoroutine(LerpMovementChunk(transform.localPosition, onDselectDestination));
     }
     internal void OnNewHolder(WoodHolder lastSelectedHolder, WoodHolder holderParent, bool undo)
@@ -71,31 +76,35 @@ public class CubeChunk : MonoBehaviour
 
         //Remove every pieces inside the chunk out of piece stack
         float addedY = 0;
+        layerOrder = new List<int>();
         while (DataManager.instance.selectedChunk.transform.childCount > childCountRequirement)
         {
             CubePiece cubePiece = lastSelectedHolder.cubePieces.FirstOrDefault();
+            int stackOrder = 4 - lastSelectedHolder.cubePieces.Count; //4 is the max number of pieces for each holder
+
             lastSelectedHolder.cubePieces.Remove(cubePiece); //remove cube piece out of list
 
             //set new parent for the removed cubePiece
             cubePiece.transform.SetParent(holderParent.transform);
 
             //handle the moving for each piece
-            CubeChunk topChunk = holderParent.chunkStack.FirstOrDefault();
+            CubeChunk topChunk = holderParent.chunkStack?.FirstOrDefault();
             Vector3 newPos;
-            if (topChunk == null)
+            if (topChunk == null && holderParent.chunkStack.Count == 0)
             {
                 var newY = newStack * heightDifference;
-                newPos = new Vector3(0, newY, -newStack - 1);
-                newStack++;
+                newPos = new Vector3(0, newY, -1);
 
-                cubePiece.sprite.sortingOrder = 0;
+                layerOrder.Add(newStack);
+
+                newStack++;
             }
             else
             {
                 newStack++;
                 addedY = newStack * heightDifference;
 
-                var topChunkLocalY = topChunk.transform.localPosition.y;
+                float topChunkLocalY = topChunk.transform.localPosition.y;
 
                 if(topChunkLocalY % heightDifference >= 0.01)
                 {
@@ -103,16 +112,20 @@ public class CubeChunk : MonoBehaviour
                     topChunkLocalY -= (topChunkLocalY % heightDifference + heightDifference);
                 }
 
+                //making sure the value is positive cause float behave weird in build
+                topChunkLocalY = Mathf.Abs(topChunkLocalY);
+
                 //calculate newY based on the number of chunks and their pivot, if local y = 0 then only use addedY
-                var newY = holderParent.existedType.Count >=2 ? topChunkLocalY + addedY : addedY;
+                var newY = holderParent.existedType.Count > 1 ? topChunkLocalY + addedY : addedY;
                 newY = newY <= maxHeight ? newY : maxHeight;
 
-                newPos = new Vector3(0, newY, 0);
+                newPos = new Vector3(0, newY, -1);
 
-                int layerOrder = Mathf.RoundToInt(newY / heightDifference);
-                cubePiece.sprite.sortingOrder = layerOrder;
+                layerOrder.Add(Mathf.RoundToInt(newY / heightDifference));
             }
-            StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement));
+            cubePiece.sprite.sortingOrder = 5; //allow the piece to be visible while moving 
+
+            StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement, stackOrder));
         }
 
         //Remove chunk out of stack
@@ -127,7 +140,7 @@ public class CubeChunk : MonoBehaviour
             OnDeselect();
         }
     }
-    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement)
+    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement, int stackOrder)
     {
         var childCount = transform.childCount;
 
@@ -139,13 +152,28 @@ public class CubeChunk : MonoBehaviour
         yield return new WaitForSeconds(iteratorCooldown);
 
         //Move to new holder
-        Vector3 moveUp = new Vector3(localPosition.x, maxHeight + heightDifference + 0.3f, localPosition.z);
+        float nudgeValue = localPosition.y < 0 ? 0.9f - (localPosition.y - (heightDifference * (4 - stackOrder - 1))) : 
+            GameManager.instance.canUndo ? 0.2f : 0.9f;
+        //give piece a little nudge (0.9f) if it's not selected cause of undo
+
+        piece.upParticle.Play(); //particle when moving up
+
+        Vector3 moveUp = new Vector3(localPosition.x, localPosition.y + (heightDifference * stackOrder) + nudgeValue, -1);
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, moveUp, piece));
 
-        Vector3 moveToX = new Vector3(0, maxHeight + heightDifference + 0.3f, localPosition.z);
+        //player are not allow to undo while a piece is in the process of moving (putting it here is important, don't move it elsewhere)
+        GameManager.instance.canUndo = false;
+
+        Vector3 moveToX = new Vector3(0, moveUp.y, -1);
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, moveToX, piece));
 
+        piece.fallParticle.Play();
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, newPos, piece));
+
+        //setting layer 
+        int layer = layerOrder.FirstOrDefault();
+        layerOrder.Remove(layer);
+        piece.sprite.sortingOrder = layer;
 
         if (childCount != childCountRequirement) yield break;
 
@@ -159,13 +187,13 @@ public class CubeChunk : MonoBehaviour
         RepivotChunk();
 
         //game object is the old chunk cause this code is running from the old chunk itself
-        Destroy(gameObject); 
+        Destroy(gameObject);
 
         //raise event to check for holders condition and determine new state for all of them
         onNewHolder.RaiseEvent();
 
         //allow player to undo again if they were undoing a piece
-        GameManager.instance.undoing = false;
+        GameManager.instance.canUndo = true;
 
         //revert conditional values to its initial state
         iteratorCount = 0;

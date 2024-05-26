@@ -7,7 +7,7 @@ public class EmptyState : IWoodHolderState
         
     }
 
-    public void OnClickEvent(StateManager woodHolderState)
+    public void OnClick(StateManager woodHolderState)
     {
         if (DataManager.instance.selectedChunk == null) return;
 

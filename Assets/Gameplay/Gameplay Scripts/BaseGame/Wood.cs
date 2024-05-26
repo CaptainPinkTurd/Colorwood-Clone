@@ -10,4 +10,6 @@ public class Wood : ScriptableObject
     public Sprite woodSprite;
 
     public CubePiece.WoodType woodType;
+
+    public Color color;
 }

@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject winPopup;
     [SerializeField] GameObject losePopup;
+    [SerializeField] private LayerMask holderMask;
+
+    internal bool gameOver;
 
     [SerializeField] GameEvent onNewHolder;
 
     public static GameManager instance;
 
     internal NewHolderInvoker newHolderInvoker;
-    internal bool undoing;
-
-    Vector3 popUpPos;
+    internal bool canUndo;
 
     void Awake()
     {
@@ -29,11 +31,35 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
+    void Start()
     {
         newHolderInvoker = new NewHolderInvoker();
 
         ViewManager.instance.LoadUiScene();
+    }
+    void Update()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
+                Mathf.Infinity, holderMask);
+        if (ray.collider)
+        {
+            if (Input.GetMouseButtonDown(0) && !gameOver)
+            {
+                StateManager state = ray.collider.GetComponent<WoodHolder>().state;
+
+                state.currentState.OnClick(state);
+            }
+            return;
+        }
+        else if (Input.GetMouseButtonDown(0)) //if touch screen instead of holder
+        {
+            if (DataManager.instance.selectedChunk != null)
+            {
+                StateManager state = DataManager.instance.selectedChunk.transform.GetComponentInParent<WoodHolder>().state;
+
+                state.currentState.OnClick(state);
+            }
+        }
     }
     public void ResetLevel()
     {
@@ -41,21 +67,23 @@ public class GameManager : MonoBehaviour
         ViewManager.instance.LoadUiScene();
 
         DataManager.instance.winCountdown = 0;
-        undoing = false;
+        canUndo = true;
     }
     public void OnWin()
     {
-        Instantiate(winPopup, popUpPos, Quaternion.identity);
+        Instantiate(winPopup, transform.position, Quaternion.identity);
+        gameOver = true;
     }
     public void OnLose()
     {
-        Instantiate(losePopup, popUpPos, Quaternion.identity);
+        Instantiate(losePopup, transform.position, Quaternion.identity);
+        gameOver = true;
     }
     public void UndoPiece()
     {
-        if (!undoing)
+        if (canUndo)
         {
-            undoing = true;
+            canUndo = false;
             newHolderInvoker.UndoCommand();
         }
     }

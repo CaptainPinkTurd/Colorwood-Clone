@@ -18,10 +18,12 @@ public class StackState : IWoodHolderState
         }
     }
 
-    public void OnClickEvent(StateManager woodHolderState)
+    public void OnClick(StateManager woodHolderState)
     {
         if (DataManager.instance.selectedChunk == null)
         {
+            if (DataManager.instance.chunkIsMoving) return; //prevent spamming
+
             woodHolderState.SwitchState(woodHolderState.selectedState);
         }
         else
@@ -59,7 +61,7 @@ public class StackState : IWoodHolderState
                 else if (totalPieces == 4 && holder.existedType.Count >= 2)
                 {
                     //if each side has 2 pieces of the same type then only move 1 piece 
-                    DataManager.instance.pieceNeededToRemove = piecesInSelectedChunk == piecesInChunk ? 1 
+                    DataManager.instance.pieceNeededToRemove = holder.cubePieces.Count >= 3 ? 1 
                         : Mathf.Abs(piecesInSelectedChunk - piecesInChunk);
                 }  
                 else if(totalPieces < 4 && holder.cubePieces.Count >= 3)

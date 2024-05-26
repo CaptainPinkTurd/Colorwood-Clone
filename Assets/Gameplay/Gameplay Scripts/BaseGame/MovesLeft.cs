@@ -19,6 +19,6 @@ public class MovesLeft : MonoBehaviour
         movesLeft--;
         movesText.text = "Moves left: " + movesLeft;
 
-        if(movesLeft == 0) GameManager.instance.OnLose();
+        if(movesLeft == 0 && DataManager.instance.winCountdown > 0) GameManager.instance.OnLose();
     }
 }

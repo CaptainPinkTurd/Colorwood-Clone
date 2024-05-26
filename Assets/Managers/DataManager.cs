@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] internal int pieceNeededToRemove = 0;
     [SerializeField] internal int winCountdown = 0;
 
+    internal bool chunkIsMoving;
     internal const float heightDifference = 0.6f;
     internal const float maxHeight = 1.8f;
 

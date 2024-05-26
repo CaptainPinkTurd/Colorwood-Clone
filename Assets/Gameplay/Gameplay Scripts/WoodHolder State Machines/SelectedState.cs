@@ -11,13 +11,14 @@ public class SelectedState : IWoodHolderState
         DataManager.instance.lastSelectedHolder = holder;
     }
 
-    public void OnClickEvent(StateManager woodHolderState)
+    public void OnClick(StateManager woodHolderState)
     {
+        if (DataManager.instance.chunkIsMoving) return; //prevent spamming
+
         //if click on the same wood holder again 
-        DataManager.instance.selectedChunk.OnDeselect();
+        DataManager.instance.selectedChunk?.OnDeselect();
         DataManager.instance.selectedChunk = null;
 
-        //holder.isSelected = false;
         woodHolderState.SwitchState(woodHolderState.stackState);
     }
     //Selected State will get transit back to other states in CubeChunk script game event

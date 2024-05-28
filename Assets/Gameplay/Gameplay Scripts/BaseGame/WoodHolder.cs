@@ -13,21 +13,21 @@ public class WoodHolder : MonoBehaviour
 
     internal List<CubePiece> cubePieces = new List<CubePiece>();
     internal List<CubeChunk> chunkStack = new List<CubeChunk>();
-    internal List<CubePiece.WoodType> existedType = new List<CubePiece.WoodType>(); //keep track of the type of wood in the holder
+    internal List<EnumData.WoodType> existedType = new List<EnumData.WoodType>(); //keep track of the type of wood in the holder
 
-    void Awake()
-    {
-        CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
+    //void Awake()
+    //{
+    //    CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
 
-        StackingChunks(); //stacking chunks in order
+    //    StackingChunks(); //stacking chunks in order
 
-        LayerSort(chunkStack); //reposition the overlapping cube
+    //    LayerSort(chunkStack); //reposition the overlapping cube
 
-    }
+    //}
 
     internal void StackingChunks()
     {
-        List<CubePiece.WoodType> existedChunkType = new List<CubePiece.WoodType>();
+        List<EnumData.WoodType> existedChunkType = new List<EnumData.WoodType>();
         var list = gameObject.transform.GetComponentsInChildren<CubeChunk>().ToList();
 
         foreach (var chunk in chunkStack)
@@ -87,11 +87,11 @@ public class WoodHolder : MonoBehaviour
         cubePieces.Reverse();
     }
 
-    public void LayerSort(List<CubeChunk> list) //sorting layer in order for each new piece
+    public void LayerSort() //sorting layer in order for each new piece
     {
-        foreach (CubeChunk chunk in list)
+        foreach (CubeChunk chunk in chunkStack)
         {
-            int layerOrder = Mathf.RoundToInt(chunk.transform.localPosition.y / DataManager.heightDifference);
+            int layerOrder = Mathf.RoundToInt(chunk.transform.localPosition.y / DataManager.heightDifference) + 1;
             int pieceInChunk = chunk.transform.childCount;
 
             for(int i = 0; i < pieceInChunk; i++)

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Wood", menuName = "Wood")]
+[CreateAssetMenu(fileName = "New Wood", menuName = "Scriptable Objects/Wood")]
 public class Wood : ScriptableObject
 {
     public new string name;
 
     public Sprite woodSprite;
 
-    public CubePiece.WoodType woodType;
+    public EnumData.WoodType woodType;
 
     public Color color;
 }

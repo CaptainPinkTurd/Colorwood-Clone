@@ -8,18 +8,6 @@ using UnityEngine.TextCore.Text;
 [System.Serializable]
 public class CubePiece : MonoBehaviour
 {
-    public enum WoodType
-    {
-        Yellow,
-        Blue,
-        Purple,
-        Red,
-        Green,
-        Lime,
-        Cyan,
-        Pink,
-        Orange
-    };
     [Header("Wood Property")]
     [SerializeField] public Wood wood;
     [SerializeField] CubeChunk chunkPrefab;

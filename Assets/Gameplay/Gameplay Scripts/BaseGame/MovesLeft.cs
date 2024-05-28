@@ -11,6 +11,7 @@ public class MovesLeft : MonoBehaviour
     void Start()
     {
         movesLeft = DataManager.instance.winCountdown * 4;
+        print(movesLeft);
         movesText.text = "Moves left: " + movesLeft;
     }
 

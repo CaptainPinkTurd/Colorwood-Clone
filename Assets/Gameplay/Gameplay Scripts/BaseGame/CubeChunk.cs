@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CubeChunk : MonoBehaviour
 {
-    public CubePiece.WoodType chunkIdentifier;
+    public EnumData.WoodType chunkIdentifier;
     public GameObject cubeStackParent;
     private float transitionDuration = 0.125f;
     List<int> layerOrder;
@@ -64,9 +64,6 @@ public class CubeChunk : MonoBehaviour
     }
     internal void OnNewHolder(WoodHolder lastSelectedHolder, WoodHolder holderParent, bool undo)
     {
-        //number of n - 1 same piece currently on top
-        int newStack = holderParent.cubePieces.Count - holderParent.chunkStack.Count;
-
         int childCountRequirement = 0;
         if(DataManager.instance.pieceNeededToRemove > 0)
         {
@@ -75,7 +72,7 @@ public class CubeChunk : MonoBehaviour
         }
 
         //Remove every pieces inside the chunk out of piece stack
-        float addedY = 0;
+        int iterationCount = 0;
         layerOrder = new List<int>();
         while (DataManager.instance.selectedChunk.transform.childCount > childCountRequirement)
         {
@@ -92,37 +89,22 @@ public class CubeChunk : MonoBehaviour
             Vector3 newPos;
             if (topChunk == null && holderParent.chunkStack.Count == 0)
             {
-                var newY = newStack * heightDifference;
+                var newY = iterationCount * heightDifference;
                 newPos = new Vector3(0, newY, -1);
 
-                layerOrder.Add(newStack);
-
-                newStack++;
+                layerOrder.Add(iterationCount);
             }
             else
             {
-                newStack++;
-                addedY = newStack * heightDifference;
-
-                float topChunkLocalY = topChunk.transform.localPosition.y;
-
-                if(topChunkLocalY % heightDifference >= 0.01)
-                {
-                    //round up the y pos if it's not dividable by 0.6, this is mainly to fix one of the bugs in the undo function
-                    topChunkLocalY -= (topChunkLocalY % heightDifference + heightDifference);
-                }
-
-                //making sure the value is positive cause float behave weird in build
-                topChunkLocalY = Mathf.Abs(topChunkLocalY);
-
-                //calculate newY based on the number of chunks and their pivot, if local y = 0 then only use addedY
-                var newY = holderParent.existedType.Count > 1 ? topChunkLocalY + addedY : addedY;
+                float newY = (holderParent.cubePieces.Count + iterationCount) * heightDifference;
                 newY = newY <= maxHeight ? newY : maxHeight;
 
                 newPos = new Vector3(0, newY, -1);
 
                 layerOrder.Add(Mathf.RoundToInt(newY / heightDifference));
             }
+            iterationCount++;
+
             cubePiece.sprite.sortingOrder = 5; //allow the piece to be visible while moving 
 
             StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement, stackOrder));

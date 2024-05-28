@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         newHolderInvoker = new NewHolderInvoker();
-
-        ViewManager.instance.LoadUiScene();
     }
     void Update()
     {
@@ -64,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        ViewManager.instance.LoadUiScene();
+        //ViewManager.instance.LoadUiScene();
 
         DataManager.instance.winCountdown = 0;
         canUndo = true;

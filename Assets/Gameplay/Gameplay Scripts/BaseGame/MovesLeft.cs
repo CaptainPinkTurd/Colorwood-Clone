@@ -7,11 +7,13 @@ public class MovesLeft : MonoBehaviour
 {
     [SerializeField] TMP_Text movesText;
     private int movesLeft;
+    private Level currentLevel;
 
     void Start()
     {
-        movesLeft = DataManager.instance.winCountdown * 4;
-        print(movesLeft);
+        currentLevel = GameManager.instance.gameObject.GetComponent<LevelGenerate>().level;
+
+        movesLeft = currentLevel.moveLimit;
         movesText.text = "Moves left: " + movesLeft;
     }
 

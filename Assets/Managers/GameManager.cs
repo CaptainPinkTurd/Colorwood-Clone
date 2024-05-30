@@ -61,8 +61,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResetLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //ViewManager.instance.LoadUiScene();
+        ViewManager.instance.ResetLevel();
 
         DataManager.instance.winCountdown = 0;
         canUndo = true;

@@ -21,6 +21,8 @@ public class ViewManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(loadingScreen);
+
         }
         else
         {
@@ -37,6 +39,22 @@ public class ViewManager : MonoBehaviour
     {
         loadingScreen.gameObject.SetActive(true);
         sceneLoading.Add(SceneManager.LoadSceneAsync((int)EnumData.SceneIndexes.LOBBY, LoadSceneMode.Additive));
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+    public void LoadLevel()
+    {
+        loadingScreen.gameObject.SetActive(true);
+        sceneLoading.Add(SceneManager.UnloadSceneAsync((int)EnumData.SceneIndexes.LOBBY));
+        sceneLoading.Add(SceneManager.LoadSceneAsync((int)EnumData.SceneIndexes.LEVEL, LoadSceneMode.Additive));
+
+        StartCoroutine(GetSceneLoadProgress());
+    }
+    public void ResetLevel()
+    {
+        loadingScreen.gameObject.SetActive(true);
+        sceneLoading.Add(SceneManager.UnloadSceneAsync((int)EnumData.SceneIndexes.LEVEL));
+        sceneLoading.Add(SceneManager.LoadSceneAsync((int)EnumData.SceneIndexes.LEVEL, LoadSceneMode.Additive));
 
         StartCoroutine(GetSceneLoadProgress());
     }
@@ -62,10 +80,11 @@ public class ViewManager : MonoBehaviour
             }
         }
         loadingScreen.gameObject.SetActive(false);
-    }
-    public void LoadUiScene()
-    {
-        PlayScene(EnumData.SceneIndexes.UI_SCENE);
+
+        if (SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL).isLoaded)
+        {
+            GameManager.instance.gameObject.GetComponent<LevelGenerate>().GenerateLevel();
+        }
     }
     public void PlayScene(EnumData.SceneIndexes scene)
     {

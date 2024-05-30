@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelGenerate : MonoBehaviour
 {
-    [SerializeField] Level level;
+    [SerializeField] internal Level level;
     [SerializeField] GameObject woodHolder;
     [SerializeField] GameObject parentRow;
     [SerializeField] GameObject cube;
@@ -15,13 +16,8 @@ public class LevelGenerate : MonoBehaviour
     const float rowDistance = 2.8f;
     const float holderDistance = 0.75f;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        GenerateLevel();
-    }
 
-    void GenerateLevel()
+    public void GenerateLevel()
     {
         for(int row = 0; row < level.rowNumbers; row++)
         {
@@ -58,6 +54,8 @@ public class LevelGenerate : MonoBehaviour
 
                 holder.GetComponent<WoodHolder>().LayerSort(); //reposition the overlapping cube
             }
+            //Since level scene will always be additive, we have to make sure that the game object spawn in level scene will always be in level scene
+            SceneManager.MoveGameObjectToScene(rowParent, SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL));
         }
     }
     List<float> CalculateColPos(float colPerRow)

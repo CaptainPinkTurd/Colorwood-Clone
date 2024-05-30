@@ -19,8 +19,8 @@ public class EnumData
 
     public enum SceneIndexes
     {
+        PERSISTENT_SCENE = 0,
         LOBBY = 1,
-        UI_SCENE = 2,
-        LEVEL = 3
+        LEVEL = 2
     }
 }

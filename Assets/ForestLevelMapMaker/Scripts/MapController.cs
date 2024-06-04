@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace Mkey
 {
@@ -28,8 +29,8 @@ namespace Mkey
         private RectTransform content;
         private int biomesCount = 6;
 
-        public static Level currentLevel; // set from this script by clicking on button. Use this variable to load appropriate level.
-        public static int topPassedLevel = 30; // set from game MapController.topPassedLevel = 2; 
+        public static int currentLevel = 1; // set from this script by clicking on button. Use this variable to load appropriate level.
+        public static int topPassedLevel = 8; // set from game MapController.topPassedLevel = 2; 
 
         [Header("If true, then the map will scroll to the Active Level Button", order = 1)]
         public bool scrollToActiveButton = true;
@@ -86,19 +87,34 @@ namespace Mkey
             for (int i = 0; i < MapLevelButtons.Count; i++)
             {
                 int scene = i + 1;
+                string levelSelectName = "Level " + scene.ToString();
+
                 Level buttonLevel = MapLevelButtons[i].level;
+                GameEvent levelSelectEvent = MapLevelButtons[i].levelSelectEvent;
+
+                //lobby cube will always be the third child index of the button
+                Transform lobbyCube = MapLevelButtons[i].gameObject.transform.GetChild(2);
 
                 MapLevelButtons[i].button.onClick.AddListener(() =>
-                { 
+                {
+                    currentLevel = scene;
                     if (MSound) MSound.SoundPlayClick(0, null);
                     GameManager.instance.gameObject.GetComponent<LevelGenerate>().level = buttonLevel;
-                    ViewManager.instance.LoadLevel();
-                    
-                    Debug.Log("load level : " + scene);
+                    levelSelectEvent.RaiseEvent(levelSelectName);
 
+                    lobbyCube.gameObject.SetActive(true);
+
+                    //turn off the last active lobby cube
+                    if(DataManager.instance.lastLobbyCube != null && DataManager.instance.lastLobbyCube != lobbyCube.gameObject)
+                        DataManager.instance.lastLobbyCube.GetComponent<LobbyCube>().DisableEvent();
+
+                    DataManager.instance.lastLobbyCube = lobbyCube.gameObject;
+
+                    Debug.Log("load level : " + scene);
                 });
 
-                SetButtonActive(scene, (currentLevel == buttonLevel || scene == topPassedLevel + 1), (topPassedLevel >= scene));
+                //only set button active for passed level 
+                SetButtonActive(scene, (currentLevel == scene || scene == topPassedLevel + 1), (topPassedLevel >= scene));
                 MapLevelButtons[i].numberText.text = (scene).ToString();
             }
             parentCanvas = GetComponentInParent<Canvas>();
@@ -146,6 +162,11 @@ namespace Mkey
 
         private void SetButtonActive(int sceneNumber, bool active, bool isPassed)
         {
+            if(sceneNumber == topPassedLevel + 1)
+            {
+                //load current latest level
+                MapLevelButtons[sceneNumber - 1].button.onClick?.Invoke();
+            }
             string saveKey = sceneNumber.ToString() + "_stars_";
             int activeStarsCount = (PlayerPrefs.HasKey(saveKey)) ? PlayerPrefs.GetInt(saveKey) : 0;
             MapLevelButtons[sceneNumber - 1].SetActive(active, activeStarsCount, isPassed);

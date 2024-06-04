@@ -14,6 +14,7 @@ namespace Mkey
         public GameObject Lock;
         public Button button;
         public TMP_Text numberText;
+        public GameEvent levelSelectEvent;
         public bool Interactable { get; private set; }
 
         /// <summary>
@@ -32,6 +33,10 @@ namespace Mkey
             }
 
             if(Lock) Lock.SetActive(!isPassed && !active);
+        }
+        public void LevelSelectText(TMP_Text text)
+        {
+            text.text = "Level " + numberText;
         }
     }
 }

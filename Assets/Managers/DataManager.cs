@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] internal int pieceNeededToRemove = 0;
     [SerializeField] internal int winCountdown = 0;
 
+    internal GameObject lastLobbyCube;
     internal bool chunkIsMoving;
     internal const float heightDifference = 0.6f;
     internal const float maxHeight = 1.8f;
@@ -29,5 +30,14 @@ public class DataManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void ResetVariables()
+    {
+        selectedChunk = null;
+        lastSelectedHolder = null;
+        winCountdown = 0;
+
+        chunkIsMoving = false;
     }
 }

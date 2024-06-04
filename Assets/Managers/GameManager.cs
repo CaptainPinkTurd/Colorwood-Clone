@@ -68,12 +68,16 @@ public class GameManager : MonoBehaviour
     }
     public void OnWin()
     {
-        Instantiate(winPopup, transform.position, Quaternion.identity);
+        var endgameUI = Instantiate(winPopup, transform.position, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(endgameUI, SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL));
+
         gameOver = true;
     }
     public void OnLose()
     {
-        Instantiate(losePopup, transform.position, Quaternion.identity);
+        var endgameUI = Instantiate(losePopup, transform.position, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(endgameUI, SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL));
+
         gameOver = true;
     }
     public void UndoPiece()

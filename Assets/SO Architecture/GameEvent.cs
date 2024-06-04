@@ -14,6 +14,13 @@ public class GameEvent : ScriptableObject
             listeners[i].OnRaise();
         }
     }
+    public void RaiseEvent(string text)
+    {
+        for(int i = listeners.Count - 1; i >= 0; i--)
+        {
+            listeners[i].OnRaise(text);
+        }
+    }
     public void AddListener(GameEventListener listener)
     {
         listeners.Add(listener);

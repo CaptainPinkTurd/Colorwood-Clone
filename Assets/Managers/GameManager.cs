@@ -1,22 +1,23 @@
+using Mkey;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     [SerializeField] GameObject winPopup;
     [SerializeField] GameObject losePopup;
     [SerializeField] private LayerMask holderMask;
-
-    internal bool gameOver;
-
     [SerializeField] GameEvent onNewHolder;
 
-    public static GameManager instance;
-
-    internal NewHolderInvoker newHolderInvoker;
+    [Header("Game State")]
+    internal NewHolderInvoker newHolderInvoker; //use to invoke command
+    internal bool gameOver;
     internal bool canUndo;
 
     void Awake()
@@ -68,6 +69,14 @@ public class GameManager : MonoBehaviour
     }
     public void OnWin()
     {
+        if(MapController.currentLevel > MapController.topPassedLevel)
+        {
+            //unlock new level after beating the latest one
+            MapController.topPassedLevel++;
+            //save current data
+            DataManager.instance.SaveGameData();
+        }
+
         var endgameUI = Instantiate(winPopup, transform.position, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(endgameUI, SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL));
 
@@ -77,8 +86,14 @@ public class GameManager : MonoBehaviour
     {
         var endgameUI = Instantiate(losePopup, transform.position, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(endgameUI, SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL));
+    }
+    internal IEnumerator LoseConditionCheck(int movesLeft)
+    {
+        if(movesLeft == 0) gameOver = true;
 
-        gameOver = true;
+        yield return new WaitForSeconds(1);
+
+        if (movesLeft == 0 && DataManager.instance.winCountdown > 0) OnLose();
     }
     public void UndoPiece()
     {

@@ -16,7 +16,7 @@ public class OnNewHolderCommand : ICommand
     public void Execute()
     {
         DataManager.instance.selectedChunk.OnNewHolder(oldHolder, holder, false);
-        GameManager.instance.OnNewHolderEvent();
+        GameManager.instance.OnNewHolderEvent(); //reduce move countdown
     }
 
     public void Undo()
@@ -46,6 +46,7 @@ public class OnNewHolderCommand : ICommand
         }
 
         //Move chunk back to previous holder
+        oldHolder.GetComponent<Collider2D>().enabled = false;
         DataManager.instance.selectedChunk.OnNewHolder(holder, oldHolder, true);
 
         DataManager.instance.selectedChunk = null;

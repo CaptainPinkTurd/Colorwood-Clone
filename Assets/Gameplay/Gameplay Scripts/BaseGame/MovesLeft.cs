@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -22,6 +23,6 @@ public class MovesLeft : MonoBehaviour
         movesLeft--;
         movesText.text = "Moves left: " + movesLeft;
 
-        if(movesLeft == 0 && DataManager.instance.winCountdown > 0) GameManager.instance.OnLose();
+        StartCoroutine(GameManager.instance.LoseConditionCheck(movesLeft));
     }
 }

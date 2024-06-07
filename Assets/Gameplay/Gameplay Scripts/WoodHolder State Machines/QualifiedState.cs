@@ -36,8 +36,14 @@ public class QualifiedState : IWoodHolderState
 
         yield return new WaitForSeconds(0.3f); //suspend until withdraw
 
-        while (timeElapsed < transitionDuration)
+        while (timeElapsed < transitionDuration) 
         {
+            if (!GameManager.instance.canUndo)
+            {
+                //if canUndo is false, it means that the game is undoing and therefore the piece should change back to white
+                a = piece.sprite.color;
+                b = Color.white;
+            }
             float t = (timeElapsed / transitionDuration) * 0.45f;
 
             piece.sprite.color = Color.Lerp(a, b, t);

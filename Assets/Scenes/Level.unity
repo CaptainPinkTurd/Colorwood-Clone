@@ -641,10 +641,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 11023894377699922, guid: 5356897af6f13e94c9862402d0dbe07b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 893417771}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7889912355854678307, guid: 5356897af6f13e94c9862402d0dbe07b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 541993705}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5356897af6f13e94c9862402d0dbe07b, type: 3}
 --- !u!224 &541993702 stripped
 RectTransform:
@@ -656,39 +653,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 11023894377699922, guid: 5356897af6f13e94c9862402d0dbe07b, type: 3}
   m_PrefabInstance: {fileID: 541993701}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &541993704 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7889912355854678307, guid: 5356897af6f13e94c9862402d0dbe07b, type: 3}
-  m_PrefabInstance: {fileID: 541993701}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &541993705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541993704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 11dc0fffd8a6ece4585d008c064dd57a, type: 2}
-  onEventRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 893417772}
-        m_TargetAssemblyTypeName: MovesLeft, Assembly-CSharp
-        m_MethodName: Countdown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &893417770
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 893417771}
   - component: {fileID: 893417772}
+  - component: {fileID: 893417773}
   m_Layer: 5
   m_Name: Moves Left
   m_TagString: Untagged
@@ -739,6 +704,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movesText: {fileID: 298991134}
+--- !u!114 &893417773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893417770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 11dc0fffd8a6ece4585d008c064dd57a, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 893417772}
+        m_TargetAssemblyTypeName: MovesLeft, Assembly-CSharp
+        m_MethodName: Countdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onStringEventRaised:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1319831676
 GameObject:
   m_ObjectHideFlags: 0

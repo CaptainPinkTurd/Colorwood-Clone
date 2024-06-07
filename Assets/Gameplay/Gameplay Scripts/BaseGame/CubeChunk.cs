@@ -15,7 +15,7 @@ public class CubeChunk : MonoBehaviour
     private const float maxHeight = DataManager.maxHeight;
     int iteratorCount = 0;
 
-    public GameEvent onNewHolder;
+    public GameEvent onNewHolderState;
     private void Start()
     {
         CubePiece cube = transform.GetComponentInChildren<CubePiece>(); 
@@ -92,7 +92,7 @@ public class CubeChunk : MonoBehaviour
                 var newY = iterationCount * heightDifference;
                 newPos = new Vector3(0, newY, -1);
 
-                layerOrder.Add(iterationCount);
+                layerOrder.Add(iterationCount + 1);
             }
             else
             {
@@ -101,13 +101,13 @@ public class CubeChunk : MonoBehaviour
 
                 newPos = new Vector3(0, newY, -1);
 
-                layerOrder.Add(Mathf.RoundToInt(newY / heightDifference));
+                layerOrder.Add(Mathf.RoundToInt(newY / heightDifference) + 1); //avoiding layer 0
             }
             iterationCount++;
 
             cubePiece.sprite.sortingOrder = 5; //allow the piece to be visible while moving 
 
-            StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement, stackOrder));
+            StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement, stackOrder, undo));
         }
 
         //Remove chunk out of stack
@@ -122,7 +122,7 @@ public class CubeChunk : MonoBehaviour
             OnDeselect();
         }
     }
-    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement, int stackOrder)
+    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement, int stackOrder, bool isUndo)
     {
         var childCount = transform.childCount;
 
@@ -165,6 +165,9 @@ public class CubeChunk : MonoBehaviour
         parentHolder.CubeChunkInitializer();
         parentHolder.StackingChunks();
 
+        //enable collider again if undoing cause we turn off collider when undo
+        if (isUndo) parentHolder.GetComponent<Collider2D>().enabled = true;
+
         //destroy the old chunk and repivot the newly created chunk in the old holder
         RepivotChunk();
 
@@ -172,7 +175,7 @@ public class CubeChunk : MonoBehaviour
         Destroy(gameObject);
 
         //raise event to check for holders condition and determine new state for all of them
-        onNewHolder.RaiseEvent();
+        onNewHolderState.RaiseEvent();
 
         //allow player to undo again if they were undoing a piece
         GameManager.instance.canUndo = true;

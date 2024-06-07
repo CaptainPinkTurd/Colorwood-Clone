@@ -30,7 +30,7 @@ namespace Mkey
         private int biomesCount = 6;
 
         public static int currentLevel = 1; // set from this script by clicking on button. Use this variable to load appropriate level.
-        public static int topPassedLevel = 8; // set from game MapController.topPassedLevel = 2; 
+        public static int topPassedLevel = 0; // set from game MapController.topPassedLevel = 2; 
 
         [Header("If true, then the map will scroll to the Active Level Button", order = 1)]
         public bool scrollToActiveButton = true;

@@ -1,3 +1,5 @@
+using Mkey;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +16,16 @@ public class DataManager : MonoBehaviour
 
     internal GameObject lastLobbyCube;
     internal bool chunkIsMoving;
+
     internal const float heightDifference = 0.6f;
     internal const float maxHeight = 1.8f;
 
-    //internal Stack<ICommand> commandList = new Stack<ICommand>();
+    [Header("Data Persistence")]
+    private IDataService DataService = new JsonDataService();
+    private bool EncryptionEnabled;
+    private long SaveTime;
+    private long LoadTime;
+
 
     void Awake()
     {
@@ -31,6 +39,11 @@ public class DataManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        ToggleEncryption(true);
+        LoadGameData();
+    }
 
     public void ResetVariables()
     {
@@ -39,5 +52,36 @@ public class DataManager : MonoBehaviour
         winCountdown = 0;
 
         chunkIsMoving = false;
+    }
+    public void ToggleEncryption(bool EncryptionEnabled)
+    {
+        this.EncryptionEnabled = EncryptionEnabled;
+    }
+    public void SaveGameData()
+    {
+        long StartTime = DateTime.Now.Ticks;
+        if(DataService.SaveData("/top-passed-level.json", MapController.topPassedLevel, EncryptionEnabled))
+        {
+            SaveTime = DateTime.Now.Ticks - StartTime;
+            Debug.Log("Save time: " + SaveTime / 1000f + "ms");
+        }
+        else
+        {
+            Debug.LogError("Could not save file!");
+        }
+    }
+    public void LoadGameData()
+    {
+        long StartTime = DateTime.Now.Ticks;
+        try
+        {
+            MapController.topPassedLevel = DataService.LoadData<int>("/top-passed-level.json", EncryptionEnabled);
+            LoadTime = DateTime.Now.Ticks - StartTime;
+            Debug.Log("Load time: " + LoadTime / 1000f + "ms");
+        }
+        catch(Exception e)
+        {
+            Debug.LogError("Could not read file, could be due to a new file");
+        }
     }
 }

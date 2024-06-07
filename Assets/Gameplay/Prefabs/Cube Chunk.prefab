@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkIdentifier: 0
   cubeStackParent: {fileID: 0}
-  onNewHolder: {fileID: 11400000, guid: 607b543cc974d2c46b013a557d9d81b2, type: 2}
+  onNewHolderState: {fileID: 11400000, guid: 607b543cc974d2c46b013a557d9d81b2, type: 2}

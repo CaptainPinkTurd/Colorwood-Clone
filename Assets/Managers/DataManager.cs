@@ -47,11 +47,13 @@ public class DataManager : MonoBehaviour
 
     public void ResetVariables()
     {
+        chunkIsMoving = false;
         selectedChunk = null;
         lastSelectedHolder = null;
+        pieceNeededToRemove = 0;
         winCountdown = 0;
 
-        chunkIsMoving = false;
+        GameManager.instance.canUndo = true;
     }
     public void ToggleEncryption(bool EncryptionEnabled)
     {

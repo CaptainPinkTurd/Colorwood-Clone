@@ -15,7 +15,7 @@ MonoBehaviour:
   columnPerRow: 3
   rowNumbers: 1
   firstRowHeight: -1
-  moveLimit: 10
+  moveLimit: 7
   woodTypeRows:
   - column:
     - holder:

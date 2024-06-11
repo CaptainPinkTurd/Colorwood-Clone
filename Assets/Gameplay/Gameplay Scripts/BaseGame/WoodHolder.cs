@@ -52,10 +52,9 @@ public class WoodHolder : MonoBehaviour
         var list = gameObject.transform.GetComponentsInChildren<CubePiece>().ToList();
         foreach(var cubePiece in cubePieces)
         {
-            //remove pieces that already existed and have their own parents
-            if (cubePiece.transform.parent != null) list.Remove(cubePiece);
+            //remove pieces that already existed and have their own chunk parents
+            if (cubePiece.transform.parent != null && cubePiece.transform.parent != this.transform) list.Remove(cubePiece);
         }
-
         list.Sort((left, right) => left.transform.position.y.CompareTo(right.transform.position.y));
         list.Reverse();
 

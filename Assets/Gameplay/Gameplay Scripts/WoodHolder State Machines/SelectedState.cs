@@ -13,7 +13,7 @@ public class SelectedState : IWoodHolderState
 
     public void OnClick(StateManager woodHolderState)
     {
-        if (DataManager.instance.chunkIsMoving) return; //prevent spamming
+        if (DataManager.instance.chunkIsMoving) return; //prevent spamming on the holder, it will offset the selected chunk pos if spam enough
 
         //if click on the same wood holder again 
         DataManager.instance.selectedChunk?.OnDeselect();

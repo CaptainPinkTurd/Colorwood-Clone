@@ -11,13 +11,16 @@ public class CubeChunk : MonoBehaviour
     private float transitionDuration = 0.125f;
     List<int> layerOrder;
 
+    [Header("Chunk Constant Variables")]
     private const float heightDifference = DataManager.heightDifference;
     private const float maxHeight = DataManager.maxHeight;
-    int iteratorCount = 0;
+    private Vector3 ogPos;
 
+    int iteratorCount = 0;
     public GameEvent onNewHolderState;
     private void Start()
     {
+        ogPos = transform.localPosition;
         CubePiece cube = transform.GetComponentInChildren<CubePiece>(); 
         chunkIdentifier = cube.wood.woodType;
     }
@@ -52,13 +55,13 @@ public class CubeChunk : MonoBehaviour
     }
     public void OnSelect()
     {
-        Vector3 onSelectDestination = new Vector3(0, transform.localPosition.y + heightDifference + 0.3f, -1);
+        Vector3 onSelectDestination = new Vector3(0, ogPos.y + heightDifference + 0.3f, -1);
         DataManager.instance.chunkIsMoving = true;
         StartCoroutine(LerpMovementChunk(transform.localPosition, onSelectDestination));
     }
     internal void OnDeselect()
     {
-        Vector3 onDselectDestination = new Vector3(0, transform.localPosition.y - heightDifference - 0.3f, -1);
+        Vector3 onDselectDestination = ogPos;
         DataManager.instance.chunkIsMoving = true;
         StartCoroutine(LerpMovementChunk(transform.localPosition, onDselectDestination));
     }
@@ -109,12 +112,14 @@ public class CubeChunk : MonoBehaviour
 
             StartCoroutine(MoveToNewHolder(cubePiece.transform.localPosition, newPos, cubePiece, holderParent, childCountRequirement, stackOrder, undo));
         }
-
         //Remove chunk out of stack
         lastSelectedHolder.chunkStack.Remove(DataManager.instance.selectedChunk);
 
         //Remove existed type in old holder
         CheckForExistType(lastSelectedHolder);
+
+        //allow player to immediately select the last holder again
+        lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.stackState);
 
         //if there's still some pieces left after moving then place them back 
         if (transform.childCount > 0 && !undo)
@@ -122,7 +127,7 @@ public class CubeChunk : MonoBehaviour
             OnDeselect();
         }
     }
-    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement, int stackOrder, bool isUndo)
+    private IEnumerator MoveToNewHolder(Vector3 localPosition, Vector3 newLocalPos, CubePiece piece, WoodHolder parentHolder, int childCountRequirement, int stackOrder, bool isUndo)
     {
         var childCount = transform.childCount;
 
@@ -150,7 +155,10 @@ public class CubeChunk : MonoBehaviour
         yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, moveToX, piece));
 
         piece.fallParticle.Play();
-        yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, newPos, piece));
+
+        //in case piece parent got changed to a chunk in that holder, this bug only happen when player select and place pieces down too fast
+        piece.transform.SetParent(parentHolder.transform); 
+        yield return StartCoroutine(LerpMovementPiece(piece.transform.localPosition, newLocalPos, piece));
 
         //setting layer 
         int layer = layerOrder.FirstOrDefault();

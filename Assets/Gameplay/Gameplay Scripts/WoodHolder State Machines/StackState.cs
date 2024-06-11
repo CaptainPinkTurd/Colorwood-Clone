@@ -22,7 +22,7 @@ public class StackState : IWoodHolderState
     {
         if (DataManager.instance.selectedChunk == null)
         {
-            if (DataManager.instance.chunkIsMoving) return; //prevent spamming
+            if (DataManager.instance.chunkIsMoving) return; //prevent spamming on the holder, it will offset the selected chunk pos if spam enough
 
             woodHolderState.SwitchState(woodHolderState.selectedState);
         }

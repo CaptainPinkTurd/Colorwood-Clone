@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class QualifiedState : IWoodHolderState
 {
+    private bool isUndoing;
     public void EnterState(StateManager stateManager, WoodHolder holder)
     {
+        GameManager.onUndo += UndoEvent;
+
         CubeChunk chunk = holder.chunkStack.FirstOrDefault();
 
         int pieceInChunk = chunk.transform.childCount;
@@ -34,13 +37,15 @@ public class QualifiedState : IWoodHolderState
         float timeElapsed = 0;
         float transitionDuration = 0.45f;
 
+        isUndoing = false; //switch back to false everytime this function run so it wouldn't affect the condition
+
         yield return new WaitForSeconds(0.3f); //suspend until withdraw
 
         while (timeElapsed < transitionDuration) 
         {
-            if (!GameManager.instance.canUndo)
+            if (isUndoing)
             {
-                //if canUndo is false, it means that the game is undoing and therefore the piece should change back to white
+                //if isUndoing is true, it means that the game is undoing and therefore the piece should change back to white
                 a = piece.sprite.color;
                 b = Color.white;
             }
@@ -51,5 +56,11 @@ public class QualifiedState : IWoodHolderState
 
             yield return null;
         }
+    }
+    private void UndoEvent()
+    {
+        //this function is usually called after exit state
+        isUndoing = true;
+        GameManager.onUndo -= UndoEvent; 
     }
 }

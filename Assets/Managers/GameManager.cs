@@ -1,4 +1,5 @@
 using Mkey;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     internal NewHolderInvoker newHolderInvoker; //use to invoke command
     internal bool gameOver;
     internal bool canUndo;
+    public static event Action onUndo;
 
     void Awake()
     {
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         newHolderInvoker = new NewHolderInvoker();
+        onUndo += newHolderInvoker.UndoCommand;
     }
     void Update()
     {
@@ -60,13 +63,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void ResetLevel()
-    {
-        ViewManager.instance.ResetLevel();
-
-        DataManager.instance.winCountdown = 0;
-        canUndo = true;
-    }
     public void OnWin()
     {
         if(MapController.currentLevel > MapController.topPassedLevel)
@@ -91,17 +87,17 @@ public class GameManager : MonoBehaviour
     {
         if(movesLeft == 0) gameOver = true;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1); //wait in case the player has won
 
         if (movesLeft == 0 && DataManager.instance.winCountdown > 0) OnLose();
     }
     public void UndoPiece()
     {
-        if (canUndo)
-        {
-            canUndo = false;
-            newHolderInvoker.UndoCommand();
-        }
+        if (onUndo == null) onUndo += newHolderInvoker.UndoCommand;
+
+        if (!canUndo) onUndo = null;
+
+        onUndo?.Invoke();
     }
     internal void OnNewHolderEvent()
     {

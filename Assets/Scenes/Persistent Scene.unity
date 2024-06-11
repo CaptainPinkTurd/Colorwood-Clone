@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 726345213}
   - component: {fileID: 726345212}
   - component: {fileID: 726345214}
+  - component: {fileID: 726345215}
   m_Layer: 0
   m_Name: Data Manager
   m_TagString: Untagged
@@ -196,6 +197,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 3b91e43a2636fa54c9c3c1286f6075cd, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 726345212}
+        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
+        m_MethodName: ResetVariables
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onStringEventRaised:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &726345215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726345211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 556491b5bcd62fe49a803231758d984e, type: 2}
   onEventRaised:
     m_PersistentCalls:
       m_Calls:
@@ -318,6 +350,7 @@ GameObject:
   - component: {fileID: 1293097224}
   - component: {fileID: 1293097226}
   - component: {fileID: 1293097227}
+  - component: {fileID: 1293097228}
   m_Layer: 0
   m_Name: View Manager
   m_TagString: Untagged
@@ -404,6 +437,37 @@ MonoBehaviour:
       - m_Target: {fileID: 1293097224}
         m_TargetAssemblyTypeName: ViewManager, Assembly-CSharp
         m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onStringEventRaised:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1293097228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293097223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 556491b5bcd62fe49a803231758d984e, type: 2}
+  onEventRaised:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1293097224}
+        m_TargetAssemblyTypeName: ViewManager, Assembly-CSharp
+        m_MethodName: ResetLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -609,7 +673,6 @@ GameObject:
   - component: {fileID: 1845343450}
   - component: {fileID: 1845343449}
   - component: {fileID: 1845343448}
-  - component: {fileID: 1845343447}
   - component: {fileID: 1845343446}
   m_Layer: 0
   m_Name: 'Game Manager '
@@ -637,37 +700,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1845343449}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: UndoPiece
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onStringEventRaised:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1845343447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845343445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abda02b1e19d824f894526da5e9d3f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 556491b5bcd62fe49a803231758d984e, type: 2}
-  onEventRaised:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1845343449}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ResetLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11216,7 +11216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3626e06684ee279498a6316c081b4c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: af5441b5b14bcb64e8499d3c780ffde6, type: 2}
+  level: {fileID: 11400000, guid: b8c6d0956650af149aee2fa8d1415f60, type: 2}
   currentLevel: {r: 1, g: 0.8470589, b: 0, a: 0}
   currentHardLevel: {r: 1, g: 0.13725491, b: 0, a: 0}
   notCurrentLevel: {r: 0.7372549, g: 0.24313726, b: 0.08235294, a: 0}

@@ -93,10 +93,12 @@ public class GameManager : MonoBehaviour
     }
     public void UndoPiece()
     {
+        Debug.Log("can undo: " + canUndo);
         if (onUndo == null) onUndo += newHolderInvoker.UndoCommand;
 
         if (!canUndo) onUndo = null;
 
+        canUndo = false;
         onUndo?.Invoke();
     }
     internal void OnNewHolderEvent()

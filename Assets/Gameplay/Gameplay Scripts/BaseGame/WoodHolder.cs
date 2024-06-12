@@ -5,25 +5,20 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+[System.Serializable]
 public class WoodHolder : MonoBehaviour
 {
     [SerializeField] internal StateManager state;
 
     [SerializeField] GameObject chunkStackParent;
 
-    internal List<CubePiece> cubePieces = new List<CubePiece>();
-    internal List<CubeChunk> chunkStack = new List<CubeChunk>();
-    internal List<EnumData.WoodType> existedType = new List<EnumData.WoodType>(); //keep track of the type of wood in the holder
+    [SerializeField] internal List<CubePiece> cubePieces = new List<CubePiece>();
+    [SerializeField] internal List<CubeChunk> chunkStack = new List<CubeChunk>();
+    [SerializeField] internal List<EnumData.WoodType> existedType = new List<EnumData.WoodType>(); //keep track of the type of wood in the holder
 
-    //void Awake()
-    //{
-    //    CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
-
-    //    StackingChunks(); //stacking chunks in order
-
-    //    LayerSort(chunkStack); //reposition the overlapping cube
-
-    //}
+    //a temporary list that store all the piece added to this holder, doing so will help holder be constantly updated of
+    //the number of cube pieces it currently have, VERY IMPORTANT as it is NEEDED to register fast pace gameplay data
+    internal List<CubePiece> tempPiecesCounter = new List<CubePiece>();
 
     internal void StackingChunks()
     {
@@ -47,16 +42,36 @@ public class WoodHolder : MonoBehaviour
         chunkStack.Reverse();
     }
 
-    internal void CubeChunkInitializer()
+    internal void CubeChunkInitializer(bool rePivot, int childToKeep = 0)
     {
         var list = gameObject.transform.GetComponentsInChildren<CubePiece>().ToList();
         foreach(var cubePiece in cubePieces)
         {
             //remove pieces that already existed and have their own chunk parents
             if (cubePiece.transform.parent != null && cubePiece.transform.parent != this.transform) list.Remove(cubePiece);
+
+            //remove any duplication in the list in case this function got called twice when the player play the game too fast
+            if (list.Contains(cubePiece)) list.Remove(cubePiece);
         }
+        //this is specifically here to unregister piece that are currently moving to the holder, or else it will mess up with the position
+        list.RemoveAll(piece => piece.transform.localPosition.x != 0 || piece.transform.localPosition.y >= 3 || piece.transform.localPosition.y < 0);
+
         list.Sort((left, right) => left.transform.position.y.CompareTo(right.transform.position.y));
         list.Reverse();
+
+        if(childToKeep > 0) 
+        {
+            while(list.Count != childToKeep)
+            {
+                //remove everything except the piece that got left behind based on piecesToRemove condition
+                list.Remove(list.First());  
+            }
+        }
+        else
+        {
+            //remove everything in the list if it's currently repivoting to avoid weird bugs
+            if (rePivot) list.RemoveAll(unwantedPiece => unwantedPiece);
+        }
 
         CubePiece prevPiece = cubePieces?.FirstOrDefault();
         foreach (var piece in list)
@@ -84,6 +99,18 @@ public class WoodHolder : MonoBehaviour
         cubePieces.AddRange(list);
         cubePieces.Sort((left, right) => left.transform.position.y.CompareTo(right.transform.position.y));
         cubePieces.Reverse();
+
+        if (list.Count < tempPiecesCounter.Count) //if the addrange are smaller than the number of tempPieceCounter currently then only remove a sufficient amount for it
+        {
+            for (int i = 0; i < tempPiecesCounter.Count - list.Count; i++)
+            {
+                tempPiecesCounter.Remove(tempPiecesCounter.First());
+            }
+        }
+        else
+        {
+            tempPiecesCounter.Clear();
+        }
     }
 
     public void LayerSort() //sorting layer in order for each new piece

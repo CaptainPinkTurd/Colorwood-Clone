@@ -8,7 +8,6 @@ public class NewHolderInvoker
     public NewHolderInvoker()
     {
         commandList = new Stack<ICommand>();
-        GameManager.onUndo += UndoCommand;
     }
 
     public void AddCommand(ICommand newCommand)

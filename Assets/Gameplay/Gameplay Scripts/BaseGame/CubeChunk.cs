@@ -90,7 +90,7 @@ public class CubeChunk : MonoBehaviour
             //handle the moving for each piece
             CubeChunk topChunk = holderParent.chunkStack?.FirstOrDefault();
             Vector3 newPos;
-            if (topChunk == null && holderParent.chunkStack.Count == 0)
+            if (topChunk == null && holderParent.cubePieces.Count == 0 && holderParent.tempPiecesCounter.Count == 0)
             {
                 var newY = iterationCount * heightDifference;
                 newPos = new Vector3(0, newY, -1);
@@ -99,13 +99,26 @@ public class CubeChunk : MonoBehaviour
             }
             else
             {
-                float newY = (holderParent.cubePieces.Count + iterationCount) * heightDifference;
+                float newY;
+                if (iterationCount == 0)
+                {
+                    newY = (holderParent.cubePieces.Count + holderParent.tempPiecesCounter.Count) * heightDifference;
+
+                    //in case there's more than 1 iteration, combine tempPiecesCounter with iterationCount to make sure the position is calculated correctly 
+                    if (holderParent.tempPiecesCounter.Count > 0) iterationCount += holderParent.tempPiecesCounter.Count;
+                }
+                else
+                {
+                    newY = (holderParent.cubePieces.Count + iterationCount) * heightDifference;
+                }
+                
                 newY = newY <= maxHeight ? newY : maxHeight;
 
                 newPos = new Vector3(0, newY, -1);
 
                 layerOrder.Add(Mathf.RoundToInt(newY / heightDifference) + 1); //avoiding layer 0
             }
+            holderParent.tempPiecesCounter.Add(cubePiece);
             iterationCount++;
 
             cubePiece.sprite.sortingOrder = 5; //allow the piece to be visible while moving 
@@ -170,14 +183,14 @@ public class CubeChunk : MonoBehaviour
         //execute these codes when there's no child left inside the old chunk
 
         //sort out all the new pieces added inside the new holder
-        parentHolder.CubeChunkInitializer();
+        parentHolder.CubeChunkInitializer(false);
         parentHolder.StackingChunks();
 
         //enable collider again if undoing cause we turn off collider when undo
         if (isUndo) parentHolder.GetComponent<Collider2D>().enabled = true;
 
         //destroy the old chunk and repivot the newly created chunk in the old holder
-        RepivotChunk();
+        RepivotChunk(childCountRequirement);
 
         //game object is the old chunk cause this code is running from the old chunk itself
         Destroy(gameObject);
@@ -192,7 +205,7 @@ public class CubeChunk : MonoBehaviour
         iteratorCount = 0;
     }
 
-    private void RepivotChunk()
+    private void RepivotChunk(int childToKeep)
     {
         var lastSelectedHolder = transform.GetComponentInParent<WoodHolder>();
 
@@ -202,7 +215,7 @@ public class CubeChunk : MonoBehaviour
             lastSelectedHolder.cubePieces.Remove(cubePiece);
         }
 
-        lastSelectedHolder.CubeChunkInitializer();
+        lastSelectedHolder.CubeChunkInitializer(true, childToKeep);
         lastSelectedHolder.StackingChunks();
 
         lastSelectedHolder.chunkStack.Remove(this);

@@ -48,7 +48,7 @@ public class LevelGenerate : MonoBehaviour
                     cubePiece.GetComponent<CubePiece>().wood = rowColData.holder[i];
                     cubePiece.GetComponent<CubePiece>().OnWoodChange();
                 }
-                holder.GetComponent<WoodHolder>().CubeChunkInitializer(); //group pieces in wood holder in a singular chunk
+                holder.GetComponent<WoodHolder>().CubeChunkInitializer(false); //group pieces in wood holder in a singular chunk
                 
                 holder.GetComponent<WoodHolder>().StackingChunks(); //stacking chunks in order
 

@@ -9,6 +9,8 @@ public class Wood : ScriptableObject
 
     public Sprite woodSprite;
 
+    public Sprite mysterySprite;
+
     public EnumData.WoodType woodType;
 
     public Color color;

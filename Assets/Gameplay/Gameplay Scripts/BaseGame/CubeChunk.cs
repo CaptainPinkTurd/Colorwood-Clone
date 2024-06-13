@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class CubeChunk : MonoBehaviour
 {
+    [Header("Mystery Event Handler")]
+    internal bool isMystery;
+    public event Action mysteryEventInvoker; 
+
+    [Header("Chunk Identifier")]
     public EnumData.WoodType chunkIdentifier;
     public GameObject cubeStackParent;
     private float transitionDuration = 0.125f;
@@ -23,6 +28,19 @@ public class CubeChunk : MonoBehaviour
         ogPos = transform.localPosition;
         CubePiece cube = transform.GetComponentInChildren<CubePiece>(); 
         chunkIdentifier = cube.wood.woodType;
+    }
+    public void MysteryReveal() //reveal all mystery cube inside this chunk
+    {
+        isMystery = false;
+        mysteryEventInvoker?.Invoke();
+
+        //each chunk has their own mystery event invoker so you wouldn't need to worry if one turn null after placing the down
+        mysteryEventInvoker = null; 
+    }
+    public void MysteryLock() //lock all cube pieces inside this chunk behind a mystery cube
+    {
+        isMystery = true;
+        mysteryEventInvoker?.Invoke();
     }
     IEnumerator LerpMovementChunk(Vector3 localPos, Vector3 destination)
     {

@@ -19,7 +19,6 @@ public class WoodHolder : MonoBehaviour
     //a temporary list that store all the piece added to this holder, doing so will help holder be constantly updated of
     //the number of cube pieces it currently have, VERY IMPORTANT as it is NEEDED to register fast pace gameplay data
     internal List<CubePiece> tempPiecesCounter = new List<CubePiece>();
-
     internal void StackingChunks()
     {
         List<EnumData.WoodType> existedChunkType = new List<EnumData.WoodType>();
@@ -112,6 +111,11 @@ public class WoodHolder : MonoBehaviour
             tempPiecesCounter.Clear();
         }
     }
+    public void ChunkStackReveal()
+    {
+        CubeChunk chunk = chunkStack.FirstOrDefault();
+        chunk?.MysteryReveal();
+    }
 
     public void LayerSort() //sorting layer in order for each new piece
     {
@@ -126,6 +130,21 @@ public class WoodHolder : MonoBehaviour
                 piece.sprite.sortingOrder = layerOrder;
                 layerOrder--;
             }
+        }
+    }
+    public void MysteryCubeSetUp() //We only need to call this function once when the game begin on each level (if they are a mystery level)
+    {
+        foreach(CubeChunk chunk in chunkStack)
+        {
+            for(int i = 0; i < chunk.transform.childCount; i++)
+            {
+                CubePiece piece = chunk.transform.GetChild(i).GetComponent<CubePiece>();
+
+                //Subscribe IsMystery function to mysteryEventInvoker to trigger it whenever a mystery event is supposed to happen
+                chunk.mysteryEventInvoker += () => piece.IsMystery(chunk.isMystery);
+            }
+
+            chunk.MysteryLock();
         }
     }
 }

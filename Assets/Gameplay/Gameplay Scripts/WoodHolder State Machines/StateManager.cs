@@ -45,10 +45,16 @@ public class StateManager : MonoBehaviour
         }
         else
         {
-            if ((currentState == qualifiedState && woodHolder.cubePieces.Count == 4) || 
+            if ((currentState == qualifiedState && woodHolder.cubePieces.Count == 4) ||
                 (currentState == selectedState && DataManager.instance.selectedChunk == woodHolder.chunkStack.FirstOrDefault())) return;
             //if there's currently a selected chunk while checking then leave that holder state alone
 
+            if (currentState == placeState && placeState.currentChunkMoving > 0)
+            {
+                //if there's a place state that's still awaiting for a chunk to move toward it then return
+                placeState.currentChunkMoving--;
+                return;
+            }
             newState = stackState;
         }
         SwitchState(newState);

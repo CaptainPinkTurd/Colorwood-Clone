@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Green Wood
   woodSprite: {fileID: 21300000, guid: 30853d1247db23a40bf6f92037776488, type: 3}
+  mysterySprite: {fileID: 21300000, guid: e69ecd67ab1f8534db9ec8e1fa856972, type: 3}
   woodType: 4
   color: {r: 0, g: 0.5019608, b: 0.26666668, a: 0}

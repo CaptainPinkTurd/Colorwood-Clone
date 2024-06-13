@@ -49,7 +49,9 @@ public class GameManager : MonoBehaviour
             {
                 StateManager state = ray.collider.GetComponent<WoodHolder>().state;
 
+                Debug.Log("State before click: " + state.currentState);
                 state.currentState.OnClick(state);
+                Debug.Log("State after click: " + state.currentState);
             }
             return;
         }
@@ -93,7 +95,7 @@ public class GameManager : MonoBehaviour
     }
     public void UndoPiece()
     {
-        Debug.Log("can undo: " + canUndo);
+        //Debug.Log("can undo: " + canUndo);
         if (onUndo == null) onUndo += newHolderInvoker.UndoCommand;
 
         if (!canUndo) onUndo = null;

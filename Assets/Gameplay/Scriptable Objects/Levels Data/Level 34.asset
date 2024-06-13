@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91540dc5d3b3f8648a416d04c465db2d, type: 3}
   m_Name: Level 34
   m_EditorClassIdentifier: 
+  moveLimit: 35
+  isMysteryLevel: 1
   columnPerRow: 6
   rowNumbers: 2
   firstRowHeight: 0
-  moveLimit: 35
   woodTypeRows:
   - column:
     - holder:

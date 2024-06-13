@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -37,12 +38,24 @@ public class CubePiece : MonoBehaviour
     }
     public void OnWoodChange() 
     {
-        //Allow updates on wood type in edit mode
-        if (wood != null)
+        //Allow updates on wood type in edit mode only 
+        if (wood != null && chunk == null)
         {
             sprite.sprite = wood.woodSprite;
             gameObject.name = wood.name;
             trail.colorGradient = SetTrailGradient(wood.color); 
+        }
+    }
+    public void IsMystery(bool isMystery)
+    {
+        //Change cube sprite to mystery sprite if chunk isMystery is true, change it back if it's false
+        if (isMystery)
+        {
+            sprite.sprite = wood.mysterySprite;
+        }
+        else
+        {
+            sprite.sprite = wood.woodSprite;
         }
     }
 
@@ -72,6 +85,7 @@ public class CubePiece : MonoBehaviour
     {
         UnityEditor.EditorApplication.delayCall -= _OnValidate;
         if (this == null) return;
+        Debug.Log("On Validate");
         OnWoodChange();
     }
 #endif

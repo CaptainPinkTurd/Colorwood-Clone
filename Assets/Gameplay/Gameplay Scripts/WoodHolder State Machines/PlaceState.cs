@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ public class PlaceState : IWoodHolderState
     NewHolderInvoker newHolderInvoker;
     EnumData.WoodType currentWoodEnter; //the wood type of the wood that got placed in for a brief moment
     int numberOfPieceEntered; //the number of piece entered from the selected chunk
+
+    //keep check of the number of chunk currently moving to keep track of the place state of the holder 
+    internal int currentChunkMoving;
     public void EnterState(StateManager woodHolderState, WoodHolder holder)
     {
         currentWoodEnter = DataManager.instance.selectedChunk.chunkIdentifier;
@@ -15,6 +19,9 @@ public class PlaceState : IWoodHolderState
 
         ICommand newHolderCommand = new OnNewHolderCommand(holder);
         newHolderInvoker.AddCommand(newHolderCommand);
+
+        //Check if there are any mystery cubes needed to reveal in the last holder
+        DataManager.instance.lastSelectedHolder.ChunkStackReveal();
 
         DataManager.instance.lastSelectedHolder = null;
         DataManager.instance.selectedChunk = null;
@@ -35,8 +42,6 @@ public class PlaceState : IWoodHolderState
 
                 var lastSelectedHolder = DataManager.instance.lastSelectedHolder;
                 lastSelectedHolder.state.SwitchState(lastSelectedHolder.state.stackState);
-
-                woodHolderState.SwitchState(woodHolderState.selectedState);
             }
             else
             {
@@ -76,6 +81,7 @@ public class PlaceState : IWoodHolderState
                     DataManager.instance.pieceNeededToRemove = piecesInSelectedChunk > piecesInChunk ? 1 : 0;
                 }
 
+                currentChunkMoving++;
                 woodHolderState.SwitchState(woodHolderState.placeState);
             }
         }

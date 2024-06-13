@@ -53,6 +53,13 @@ public class LevelGenerate : MonoBehaviour
                 holder.GetComponent<WoodHolder>().StackingChunks(); //stacking chunks in order
 
                 holder.GetComponent<WoodHolder>().LayerSort(); //reposition the overlapping cube
+
+                if(level.isMysteryLevel)
+                {
+                    holder.GetComponent<WoodHolder>().MysteryCubeSetUp(); //setting up mystery cube sprite
+
+                    holder.GetComponent<WoodHolder>().ChunkStackReveal(); //reveal all the cube pieces currently on top of the holder
+                } 
             }
             //Since level scene will always be additive, we have to make sure that the game object spawn in level scene will always be in level scene
             SceneManager.MoveGameObjectToScene(rowParent, SceneManager.GetSceneByBuildIndex((int)EnumData.SceneIndexes.LEVEL));

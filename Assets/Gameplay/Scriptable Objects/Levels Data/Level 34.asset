@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Level 34
   m_EditorClassIdentifier: 
   moveLimit: 35
-  isMysteryLevel: 1
+  isMysteryLevel: 0
   columnPerRow: 6
   rowNumbers: 2
   firstRowHeight: 0
+  woodTypeInLevel: 
   woodTypeRows:
   - column:
     - holder:
@@ -65,6 +66,5 @@ MonoBehaviour:
       - {fileID: 11400000, guid: ac96e3db3fea4764890581fb537a6322, type: 2}
       - {fileID: 11400000, guid: bc0281cb1c8d737429369cdc91a1ec3b, type: 2}
       - {fileID: 11400000, guid: 4ab4c6c726bc7fd48aa167131c1de570, type: 2}
-    - holder: []
     - holder: []
     - holder: []

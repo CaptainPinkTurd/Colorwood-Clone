@@ -35,12 +35,14 @@ public class LevelGenerate : MonoBehaviour
             {
                 WoodDataVisualizer.RowData rowColData = rowData.column[col];
 
+                //Generating holder
                 Vector3 spawnPos = new Vector3(colPositions[col], rowPositon, 0);
                 GameObject holder = Instantiate(woodHolder, spawnPos, Quaternion.identity);
                 holder.transform.parent = rowParent.transform;
 
                 for(int i = 0; i < rowColData.holder.Length; i++)
                 {
+                    //Generating cube pieces for said holder
                     Vector3 cubePos = new Vector3(0, DataManager.heightDifference * i, 0);
                     GameObject cubePiece = Instantiate(cube, Vector3.zero, Quaternion.identity, holder.transform);
                     cubePiece.transform.localPosition = cubePos;
@@ -58,7 +60,7 @@ public class LevelGenerate : MonoBehaviour
                 {
                     holder.GetComponent<WoodHolder>().MysteryCubeSetUp(); //setting up mystery cube sprite
 
-                    holder.GetComponent<WoodHolder>().ChunkStackReveal(); //reveal all the cube pieces currently on top of the holder
+                    holder.GetComponent<WoodHolder>().ChunkStackReveal(); //reveal all the mystery cubes currently on top of the holder
                 } 
             }
             //Since level scene will always be additive, we have to make sure that the game object spawn in level scene will always be in level scene

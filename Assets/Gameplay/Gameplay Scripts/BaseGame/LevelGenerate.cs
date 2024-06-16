@@ -33,6 +33,10 @@ public class LevelGenerate : MonoBehaviour
 
             for(int col = 0; col < level.columnPerRow; col++)
             {
+                //since i haven't implemented the lock holder feature for the game yet, there will be a missing holder in the second row for most level
+                //therefore i have to skip the last index of the last row if it's a null value
+                if (col >= rowData.column.Length) continue; 
+
                 WoodDataVisualizer.RowData rowColData = rowData.column[col];
 
                 //Generating holder
@@ -43,7 +47,7 @@ public class LevelGenerate : MonoBehaviour
                 for(int i = 0; i < rowColData.holder.Length; i++)
                 {
                     //Generating cube pieces for said holder
-                    Vector3 cubePos = new Vector3(0, DataManager.heightDifference * i, 0);
+                    Vector3 cubePos = new Vector3(0, DataManager.heightDifference * (rowColData.holder.Length - 1 - i), 0); //y position are from top to bottom to match with the order of the holder in level data
                     GameObject cubePiece = Instantiate(cube, Vector3.zero, Quaternion.identity, holder.transform);
                     cubePiece.transform.localPosition = cubePos;
 

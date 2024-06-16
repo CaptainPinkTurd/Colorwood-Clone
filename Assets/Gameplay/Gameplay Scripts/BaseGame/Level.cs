@@ -34,7 +34,7 @@ public class Level : ScriptableObject
                 pieceLimit.Add(4); //each level can only contain 4 piece of the same color
             }
 
-            for (int holderNumber = 1; holderNumber <= woodTypeInLevelTemp.Count; holderNumber++) //the length of woodTypeInLeve will always be equal to the number of holder with pieces in it
+            for (int holderNumber = 1; holderNumber <= woodTypeInLevel.Length; holderNumber++) //the length of woodTypeInLeve will always be equal to the number of holder with pieces in it
             {
                 int colIndex = holderNumber - (rowIndex * columnPerRow) - 1;
 
@@ -46,12 +46,13 @@ public class Level : ScriptableObject
                     int woodTypeIndex = Random.Range(0, woodTypeInLevelTemp.Count);
                     Debug.Log(woodTypeIndex);
 
-                    Wood woodData = woodTypeInLevel[woodTypeIndex];
+                    Wood woodData = woodTypeInLevelTemp[woodTypeIndex];
                     rowHolderData.holder[i] = woodData;
 
                     pieceLimit[woodTypeIndex]--;
                     if (pieceLimit[woodTypeIndex] == 0)
                     {
+                        Debug.Log("Piece at index " + woodTypeIndex + " has reached its limit");
                         woodTypeInLevelTemp.RemoveAt(woodTypeIndex);
                         pieceLimit.RemoveAt(woodTypeIndex); //piece limit should also remove the element of that index to keep track of the order
                     }
